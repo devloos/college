@@ -1,0 +1,97 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #1        : 
+****************************************************
+
+Welcome to coin toss! Get 3 heads in a row to win!
+
+What is your name?          Carlos Aguilera
+What is your gender (m/f):  m
+
+
+Try to get 3 heads in a row. Good luck Mr. Aguilera
+
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+It took you 7 tosses to get 3 heads in a row.
+On average you flipped heads 71% of the time
+
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #1        : 
+****************************************************
+
+Welcome to coin toss! Get 3 heads in a row to win!
+
+What is your name?          Carla Aguilera
+What is your gender (m/f):  f
+
+
+Try to get 3 heads in a row. Good luck Ms. Aguilera
+
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+It took you 8 tosses to get 3 heads in a row.
+On average you flipped heads 62% of the time
+
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #1        : 
+****************************************************
+
+Welcome to coin toss! Get 3 heads in a row to win!
+
+What is your name?          Kirian Aguilera
+What is your gender (m/f):  M
+
+
+Try to get 3 heads in a row. Good luck Mr. Aguilera
+
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+TAIL
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+Press <enter> to flip
+HEAD
+It took you 7 tosses to get 3 heads in a row.
+On average you flipped heads 57% of the time

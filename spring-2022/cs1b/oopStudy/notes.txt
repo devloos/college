@@ -1,0 +1,28 @@
+/*
+* Carlos Aguilera
+* Cs1b Dr. B
+*/
+
+* In object oriented programming we come at the problem by trying to figure out what data we are going to use.
+
+* A Class is a definition of a data type, but it is a compound data type meaning it can have more than one data type in
+it.
+
+* Field is data inside the class also known as a whole member
+
+* Methods is something that classes just have for example if we have a cat class well cats meow that would go for
+all cats therefore it is a method in a class not a field but does not mean cats can not have a different type
+of meow just that it has a meow.
+
+* Classes may over lap this is called inheritance, lets take an example you have three classes Animal, Mammal, and
+Cat because a mammal is a animal it would have all the methods and or fields inside animal with that being said
+a cat is a mammal so it has everything that mammal and animal have.
+
+* Inheritance is a very useful for not mistaking or getting incorrect meaning to some members inside classes
+
+* Do not be mistaken in using inheritance all over the place, as brian said a good way for making sure to use
+inheritance only when it is needed is the is-a and has-a rule.
+
+* Is-a is very simple a Cat IS-A kind of mammal therefore inheritance works
+
+* Has-a is saying a Car HAS-A a steering wheel but a steering IS NOT a car

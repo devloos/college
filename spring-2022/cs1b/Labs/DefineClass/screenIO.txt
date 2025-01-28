@@ -1,0 +1,12 @@
+Name: 
+Age: 0
+Weight: 0
+Height: 0
+Name: Carlos
+Age: 21
+Weight: 155
+Height: 5.9
+Using get() Name: Changed
+Using get() Age: 19
+Using get() Weight: 144
+Using get() Height: 5.8

@@ -1,0 +1,24 @@
+CC = g++
+
+all: hw06 tar
+
+hw06: hw06.h hw06.cpp distance.o radius.o circumference.o area.o
+	g++ hw06.cpp -o hw06 distance.o radius.o circumference.o area.o
+
+distance.o: hw06.h distance.cpp
+	g++ -c distance.cpp -o distance.o
+
+radius.o: hw06.h radius.o
+	g++ -c radius.cpp -o radius.o
+
+circumference.o: hw06.h circumference.o
+	g++ -c circumference.cpp -o circumference.o
+
+area.o: hw06.h area.o
+	g++ -c area.cpp -o area.o
+
+clean:
+	rm *.o hw06
+
+tar:
+	tar cf hw06.tar Makefile hw06.cpp hw06.scr distance.cpp radius.cpp circumference.cpp area.cpp

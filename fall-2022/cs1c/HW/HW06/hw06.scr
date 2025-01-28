@@ -1,0 +1,59 @@
+Script started on Fri Oct 28 23:19:07 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2# ls -la
+total 48
+drwxr-xr-x  14 ca    staff   448 Oct 28 23:19 .
+drwxr-xr-x   7 ca    staff   224 Oct 26 22:22 ..
+-rw-r--r--   1 ca    staff  6717 Oct 26 22:23 .clang-format
+-rw-r--r--   1 ca    staff   304 Oct 28 23:14 .gitignore
+drwxr-xr-x   5 ca    staff   160 Oct 26 22:23 .vscode
+-rw-r--r--   1 ca    staff   508 Oct 28 20:20 CMakeLists.txt
+-rw-r--r--   1 ca    staff   425 Oct 28 23:13 Makefile
+drwxr-xr-x   3 ca    staff    96 Oct 26 22:23 bin
+drwxr-xr-x   7 ca    staff   224 Oct 28 22:55 build
+-rw-r--r--   1 root  staff    43 Oct 28 23:19 hw06.scr
+drwxr-xr-x   3 ca    staff    96 Oct 26 22:23 include
+drwxr-xr-x   3 ca    staff    96 Oct 26 22:23 lib
+drwxr-xr-x   2 ca    staff    64 Oct 28 23:15 obj
+drwxr-xr-x   4 ca    staff   128 Oct 28 19:06 src
+bash-3.2# date
+Fri Oct 28 23:19:19 PDT 2022
+bash-3.2# make all
+g++ -std=c++17 -c src/core/hw06.cpp -o obj/hw06.o
+g++ -std=c++17 -c src/core/hw06f.cpp -o obj/hw06f.o
+g++ -std=c++17 -c src/utility/utility.cpp -o obj/utility.o
+g++ -std=c++17 -o hw06 obj/hw06.o obj/hw06f.o obj/utility.o
+bash-3.2# ls
+.clang-format	.vscode		Makefile	build		hw06.scr	lib		src
+.gitignore	CMakeLists.txt	bin		hw06		include		obj
+bash-3.2# ./hw06
+-ARITHMETIC OPERATIONS-
+
+1/2 + 1/4 = 3/4
+1/2 - 1/4 = 1/4
+1/2 * 1/4 = 1/8
+1/2 / 1/4 = 2/1
+
+-RELATIONAL OPERATIONS-
+
+1/2 < 1/4 = false
+1/2 <= 1/4 = false
+1/2 > 1/4 = true
+1/2 >= 1/4 = true
+1/2 == 1/4 = false
+1/2 != 1/4 = true
+
+-INPUT-
+
+Enter fraction (e.g. 3/4): 10/5
+The fraction entered was 2/1
+
+Enter an invalid fraction (e.g. cat/dog): td/bgd
+stoi: no conversion
+bash-3.2# exit
+exit
+
+Script done on Fri Oct 28 23:20:32 2022

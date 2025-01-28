@@ -1,0 +1,7 @@
+*.exe
+*.vscode
+*.tar
+*.DS_Store
+Makefile
+*.make
+*build/

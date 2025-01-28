@@ -1,0 +1,49 @@
+Constructor:
+Name: General Person
+Age: 20
+Weight: 90
+Height: 5.9
+
+Initial Values:
+Name: Changed Name
+Age: 18
+Weight: 90
+Height: 5.6
+
+Setters:
+Name: Set Name
+Age: 40
+Weight: 90
+Height: 5.3
+
+Getters:
+Name: Set Name
+Age: 40
+Weight: 90
+Height: 5.3
+Constructor:
+Name: Student
+Age: 20
+Weight: 90
+Height: 5.9
+Major: Computer Science
+GPA: 3.8
+Class Year: 1
+
+Setters:
+Name: Set Name
+Age: 40
+Weight: 90
+Height: 5.3
+Major: English
+GPA: 3.7
+Class Year: 2
+
+Getters:
+Name: Set Name
+Age: 40
+Weight: 90
+Height: 5.3
+Major: English
+GPA: 3.7
+Class Year: 2

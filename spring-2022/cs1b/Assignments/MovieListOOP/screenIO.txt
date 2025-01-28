@@ -1,0 +1,9 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #5        : Movie List OOP
+****************************************************
+
+INPUT FILE: default.txt
+OUTPUT FILE: output.txt

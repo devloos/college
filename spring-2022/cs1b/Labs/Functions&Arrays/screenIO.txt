@@ -1,0 +1,3 @@
+Array of ints: [3] [90] [32] [8] [0] 
+Array of floats: [2.6] [4.3] [53.6] [83.7] [0.3] 
+Average for ints: 26.6

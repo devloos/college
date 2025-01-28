@@ -1,0 +1,14 @@
+Enter a series of package weights or 0 to terminate program
+: 2
+: 35
+: 12
+: 1
+: 17
+: 4
+: 0
+
+2 packages under 2 lbs.
+2 packages between 3 - 12 lbs.
+1 packages between 13 - 20 lbs.
+1 packages between 21 - 40 lbs.
+The total shipping price is $57.50

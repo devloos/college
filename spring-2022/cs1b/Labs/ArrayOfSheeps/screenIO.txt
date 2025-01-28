@@ -1,0 +1,251 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #13       : Array & Linked List (OOP)
+****************************************************
+
+*************************************
+* WELCOME TO THE SHEEP LIST MANAGER *
+*************************************
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 1
+
+Sheep Name: Fluffy
+Sheep Age: 1
+
+The Sheep...
+Sheep Name: Fluffy
+Sheep Age:  1
+Has been Added!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 2
+
+NAME           AGE
+-------------- ---
+Fluffy          1
+
+Is in the front of the list
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 1
+
+Sheep Name: Maa 
+Sheep Age: 3
+
+The Sheep...
+Sheep Name: Maa
+Sheep Age:  3
+Has been Added!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 4
+
+There are 2 sheep in the list!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 5
+
+NAME           AGE
+-------------- ---
+Fluffy          1
+Maa             3 
+There are 2 sheep in the list!
+
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 1
+
+Sheep Name: Baa Baa
+Sheep Age: 2
+
+The Sheep...
+Sheep Name: Baa Baa
+Sheep Age:  2
+Has been Added!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 5
+
+NAME           AGE
+-------------- ---
+Fluffy          1
+Maa             3
+Baa Baa         2 
+There are 3 sheep in the list!
+
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 4
+
+There are 3 sheep in the list!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 3
+
+Who are you looking for? Baa Baa
+
+NAME           AGE
+-------------- ---
+Baa Baa         2
+
+Has been found!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 6
+The list has been cleared!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 6
+
+The list is empty!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 5
+
+The list is empty!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 4
+
+There are 0 sheep in the list!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 3
+
+There are no sheep to be found!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 2
+
+Nobody is in front - the list is empty!
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 7 
+
+**** The number 7 is an invalid entry      ****
+**** Please input a number between 0 and 6 ****
+
+SHEEP LIST MANAGER
+1 - Add Sheep
+2 - Output 1st Sheep
+3 - Find Sheep
+4 - List Size
+5 - Output List
+6 - Clear List
+0 - Exit
+Enter a command: 0

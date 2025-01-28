@@ -1,0 +1,172 @@
+Script started on Sat Aug 27 22:35:37 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2# ls
+.DS_Store	.gitignore	CMakeLists.txt	Instructions.md	bin		include		src
+.clang-format	.vscode		HW01.scr	Makefile	build		lib
+bash-3.2# date
+Sat Aug 27 22:35:57 PDT 2022
+bash-3.2# ls -l
+total 72
+-rw-r--r--@ 1 ca    staff  6148 Aug 27 22:33 .DS_Store
+-rw-r--r--  1 ca    staff  6715 Aug 27 16:34 .clang-format
+-rw-r--r--  1 ca    staff   299 Aug 27 16:34 .gitignore
+drwxr-xr-x  5 ca    staff   160 Aug 27 16:34 .vscode
+-rw-r--r--  1 ca    staff   634 Aug 27 20:18 CMakeLists.txt
+-rw-r--r--  1 root  staff    43 Aug 27 22:35 HW01.scr
+-rw-r--r--  1 ca    staff  1458 Aug 27 20:57 Instructions.md
+-rw-r--r--  1 ca    staff   704 Aug 27 22:30 Makefile
+drwxr-xr-x  3 ca    staff    96 Aug 27 16:34 bin
+drwxr-xr-x  7 ca    staff   224 Aug 27 21:54 build
+drwxr-xr-x  3 ca    staff    96 Aug 27 16:34 include
+drwxr-xr-x  3 ca    staff    96 Aug 27 16:34 lib
+drwxr-xr-x  7 ca    staff   224 Aug 27 18:04 src
+bash-3.2# make all
+clang++ -std=c++17 -c src/core/Main.cpp -o Main.o
+clang++ -std=c++17 -c src/core/HW01.cpp -o HW01.o
+clang++ -std=c++17 -c src/utility/Utility.cpp -o Utility.o
+clang++ -std=c++17 -c src/views/Menu.cpp -o Menu.o
+clang++ -std=c++17 -c src/views/Info.cpp -o Info.o
+clang++ -std=c++17 -c src/components/DetCost.cpp -o DetCost.o
+clang++ -std=c++17 -o HW01 Main.o HW01.o Utility.o Menu.o Info.o DetCost.o
+bash-3.2# ls -l
+total 336
+-rw-r--r--@ 1 ca    staff   6148 Aug 27 22:33 .DS_Store
+-rw-r--r--  1 ca    staff   6715 Aug 27 16:34 .clang-format
+-rw-r--r--  1 ca    staff    299 Aug 27 16:34 .gitignore
+drwxr-xr-x  5 ca    staff    160 Aug 27 16:34 .vscode
+-rw-r--r--  1 ca    staff    634 Aug 27 20:18 CMakeLists.txt
+-rw-r--r--  1 root  staff   2128 Aug 27 22:36 DetCost.o
+-rwxr-xr-x  1 root  staff  64385 Aug 27 22:36 HW01
+-rw-r--r--  1 root  staff   3784 Aug 27 22:36 HW01.o
+-rw-r--r--  1 root  staff   1171 Aug 27 22:36 HW01.scr
+-rw-r--r--  1 root  staff  13576 Aug 27 22:36 Info.o
+-rw-r--r--  1 ca    staff   1458 Aug 27 20:57 Instructions.md
+-rw-r--r--  1 root  staff    600 Aug 27 22:36 Main.o
+-rw-r--r--  1 ca    staff    704 Aug 27 22:30 Makefile
+-rw-r--r--  1 root  staff  16632 Aug 27 22:36 Menu.o
+-rw-r--r--  1 root  staff  19480 Aug 27 22:36 Utility.o
+drwxr-xr-x  3 ca    staff     96 Aug 27 16:34 bin
+drwxr-xr-x  7 ca    staff    224 Aug 27 21:54 build
+drwxr-xr-x  3 ca    staff     96 Aug 27 16:34 include
+drwxr-xr-x  3 ca    staff     96 Aug 27 16:34 lib
+drwxr-xr-x  7 ca    staff    224 Aug 27 18:04 src
+bash-3.2# ./HW01 
+[34m
+
+CARLOS 24 HOUR FITNESS
+[39m----------------------
+       Info [1]
+  Decide Options [2]
+      Leave [0]
+
+ENTER #: 1
+
+
+[34m                MEMBERSHIP INFO
+[39m------------------------------------------------
+* MONTHLY BASE PRICE FOR MEMBERSHIP: $100
+
+* PERSONAL TRAINING BASE PRICE PER SESSION: $20
+
+* Senior Citizens get 30% OFF
+
+* Pay 12 or more months upfront and get 15% OFF
+
+* More than five personal trainings paid upfront
+and get 20% OFF "per session"
+
+ENTER ANY KEY TO GO BACK: 
+[34m
+
+CARLOS 24 HOUR FITNESS
+[39m----------------------
+       Info [1]
+  Decide Options [2]
+      Leave [0]
+
+ENTER #: 2
+
+
+[34m           QUESTIONARE
+[39m-----------------------------------
+* Are you a Senior Citizen [Y/N]: y
+
+
+[34m                   QUESTIONARE
+[39m----------------------------------------------------
+* How many months upfront will you pay [NUMBER]: 3
+
+
+[34m                             QUESTIONARE
+[39m-----------------------------------------------------------------------
+* How many Personal Training Sessions upfront will you pay [NUMBER]: 2
+
+
+[34m        PURCHASE
+[39m------------------------
+* TOTAL TODAY: $238
+* MONTHLY TOTAL: $70
+* PURCHASE? [Y/N]: y
+[34m
+
+CARLOS 24 HOUR FITNESS
+[39m----------------------
+       Info [1]
+  Decide Options [2]
+      Leave [0]
+
+ENTER #: 9
+
+WARNING: [INVALID INPUT RANGE]
+
+[34m
+
+CARLOS 24 HOUR FITNESS
+[39m----------------------
+       Info [1]
+  Decide Options [2]
+      Leave [0]
+
+ENTER #: j
+
+ERROR: [STREAM FAILED]
+
+ENTER #: 2
+
+
+[34m           QUESTIONARE
+[39m-----------------------------------
+* Are you a Senior Citizen [Y/N]: n
+
+
+[34m                   QUESTIONARE
+[39m----------------------------------------------------
+* How many months upfront will you pay [NUMBER]: 14
+
+
+[34m                             QUESTIONARE
+[39m-----------------------------------------------------------------------
+* How many Personal Training Sessions upfront will you pay [NUMBER]: 7
+
+
+[34m        PURCHASE
+[39m------------------------
+* TOTAL TODAY: $1302
+* MONTHLY TOTAL: $100
+* PURCHASE? [Y/N]: n
+[34m
+
+CARLOS 24 HOUR FITNESS
+[39m----------------------
+       Info [1]
+  Decide Options [2]
+      Leave [0]
+
+ENTER #: 0
+bash-3.2# exit
+exit
+
+Script done on Sat Aug 27 22:38:07 2022

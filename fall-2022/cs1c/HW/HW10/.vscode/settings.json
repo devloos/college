@@ -1,0 +1,10 @@
+{
+  "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
+  "[cpp]": {
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "iosfwd": "cpp",
+    "string": "cpp"
+  }
+}

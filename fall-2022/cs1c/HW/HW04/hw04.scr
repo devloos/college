@@ -1,0 +1,615 @@
+Script started on 2022-10-11 05:11:51+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="160" LINES="45"]
+]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[2m⏎(B[m                                                                                                                                                               ⏎ [KWelcome to fish, the friendly interactive shell
+Type `help` for instructions on how to use fish
+[?2004h]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# [Kd[38;5;196md[30m(B[m[38;5;240mate[30m(B[m[38;5;196ma[38;5;240mte[30m(B[m[38;5;196mt[38;5;240me[30m(B[m[38;5;196me[30m(B[m[38;5;26mdate[30m(B[m
+[30m(B[m[?2004l]0;date /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[mTue Oct 11 05:11:53 UTC 2022
+[2m⏎(B[m                                                                                                                                                               ⏎ [K[?2004h]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# [Kl[38;5;196ml[30m(B[m[38;5;240ms[30m(B[m[38;5;196ma[30m(B[m[38;5;26mla[30m(B[m[38;5;240m [30m(B[m[K
+[30m(B[m[?2004l]0;la /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[mtotal 60K
+drwxr-xr-x 9 admin admin 4.0K Oct 11 05:11 [0m[01;34m.[0m/
+drwxr-xr-x 6 admin admin 4.0K Oct 10 05:36 [01;34m..[0m/
+-rw-r--r-- 1 admin admin 6.6K Oct 10 05:36 .clang-format
+-rw-r--r-- 1 admin admin  299 Oct 10 05:36 .gitignore
+drwxr-xr-x 2 admin admin 4.0K Oct 11 04:34 [01;34m.vscode[0m/
+-rw-r--r-- 1 admin admin  568 Oct 11 04:09 CMakeLists.txt
+-rw-r--r-- 1 admin admin  974 Oct 11 05:05 Makefile
+drwxr-xr-x 2 admin admin 4.0K Oct 10 05:36 [01;34mbin[0m/
+drwxr-xr-x 3 admin admin 4.0K Oct 11 04:35 [01;34mbuild[0m/
+-rw-r--r-- 1 admin admin 2.7K Oct 11 01:34 cache.txt
+-rw-r--r-- 1 root  root     0 Oct 11 05:11 hw04.scr
+drwxr-xr-x 2 admin admin 4.0K Oct 10 05:36 [01;34minclude[0m/
+drwxr-xr-x 2 admin admin 4.0K Oct 10 05:36 [01;34mlib[0m/
+drwxr-xr-x 2 admin admin 4.0K Oct 11 05:11 [01;34mobj[0m/
+drwxr-xr-x 7 admin admin 4.0K Oct 10 05:36 [01;34msrc[0m/
+[2m⏎(B[m                                                                                                                                                               ⏎ [K[?2004h]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# [Km[38;5;196mm[30m(B[m[38;5;240make [30m(B[m[38;5;196ma[38;5;240mke [30m(B[m[38;5;196mk[38;5;240me [30m(B[m[38;5;196me[38;5;240m [30m(B[m[38;5;26mmake[38;5;240m [30m(B[m[K
+[30m(B[m[?2004l]0;make /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[mg++ -std=c++17 -c src/core/hw04.cpp -o obj/hw04.o
+g++ -std=c++17 -c src/core/Menu.cpp -o obj/Menu.o
+g++ -std=c++17 -c src/db/db.cpp -o obj/db.o
+g++ -std=c++17 -c src/models/Address.cpp -o obj/Address.o
+g++ -std=c++17 -c src/models/Student.cpp -o obj/Student.o
+g++ -std=c++17 -c src/utility/Utility.cpp -o obj/Utility.o
+g++ -std=c++17 -o hw04 obj/hw04.o obj/Menu.o obj/db.o obj/Address.o obj/Student.o obj/Utility.o
+[2m⏎(B[m                                                                                                                                                               ⏎ [K[?2004h]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# [Kvalgrind --leak-check=full ./hw04]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# valgrind --leak-check=full ./hw04[K[33D[38;5;26mvalgrind[30m(B[m [38;5;39m--leak-check=full[30m(B[m [38;5;39m[4m./hw04[30m(B[m
+[30m(B[m[?2004l]0;valgrind /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m==191807== Memcheck, a memory error detector
+==191807== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==191807== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==191807== Command: ./hw04
+==191807== 
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 3
+
+Menu - Select:
+  (a) Select record to display using student ID
+  (b) Select record to display using studentś name
+  (c) Display all records
+
+Option: c
+Name: Brittany Carter
+Email: brittany.carter@email.com
+Phone: +251 743.443.9472 x1254
+Address: 3064 Spinka Highway Boscoside Oklahoma 74023
+Major: Computer Science
+Rank: NA
+GPA: 2.3
+
+Name: Candace Kovacek
+Email: candace.kovacek@email.com
+Phone: +676 (900) 005-1892
+Address: 97715 Stacey Well Port Mellisa Illinois 84335
+Major: Computer Science
+Rank: NA
+GPA: 0
+
+Name: Carlos Aguilera
+Email: Aguilera@gmail.com
+Phone: (949) 973-1274
+Address: 26524 Paseo Santa Clara San Juan Capistrano CA 92675
+Major: Computer Science
+Rank: NA
+GPA: 3.5
+
+Name: Elliot Goodwin
+Email: elliot.goodwin@email.com
+Phone: +256 383.778.2780 x9343
+Address: 661 Yanira Corners East Micah Delaware 35844
+Major: Math
+Rank: NA
+GPA: 1.9
+
+Name: Emogene Murazik
+Email: emogene.murazik@email.com
+Phone: +260 1-253-211-7583 x315
+Address: 91704 Bashirian Courts Stantonmouth California 85573
+Major: Math
+Rank: NA
+GPA: 3
+
+Name: Rosenda Koepp
+Email: rosenda.koepp@email.com
+Phone: +964 195.667.4139 x42913
+Address: 163 Rosie Island Gottliebberg Virginia 19006
+Major: Computer Science
+Rank: NA
+GPA: 4.3
+
+Name: Samara Mueller
+Email: samara.mueller@email.com
+Phone: +248 183-416-4558 x4270
+Address: 9774 Welch Hill Adalbertoport Nevada 42511
+Major: Computer Science
+Rank: NA
+GPA: 4
+
+Name: Scottie O'Reilly
+Email: scottie.o'reilly@email.com
+Phone: +229 (512) 293-0249
+Address: 58504 Strosin Way Port Modesto Arizona 19453
+Major: Math
+Rank: NA
+GPA: 3.8
+
+Name: Selena Rowe
+Email: selena.rowe@email.com
+Phone: +48 1-572-863-9817 x10077
+Address: 1254 Shavonda Heights East Tuanfort California 53630
+Major: Math
+Rank: NA
+GPA: 1.8
+
+Name: Shelly Paucek
+Email: shelly.paucek@email.com
+Phone: +371 1-623-210-5778
+Address: 49089 Alona Meadows Port Luna Colorado 6032
+Major: Computer Science
+Rank: NA
+GPA: 2.3
+
+Name: Shizuko Murphy
+Email: shizuko.murphy@email.com
+Phone: +299 1-278-225-6723 x2546
+Address: 131 Denis Highway Howardland Nebraska 97886
+Major: Accounting
+Rank: NA
+GPA: 3.4
+
+Name: Vincenza Heaney
+Email: vincenza.heaney@email.com
+Phone: +500 718-683-8791 x9762
+Address: 10572 Anthony Greens Port Wendell Hawaii 23592
+Major: Accounting
+Rank: NA
+GPA: 5
+
+Name: Zona Conroy
+Email: zona.conroy@email.com
+Phone: +66 (547) 081-0493 x9733
+Address: 8433 Senger Wells Natishaland Georgia 61866
+Major: Computer Science
+Rank: NA
+GPA: 1.4
+
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 4
+
+DATABASE SORTED BY NAME
+
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 2
+
+Menu - Select:
+  (a) Select record to delete using student ID
+  (b) Select record to delete using student's name
+
+Option: b
+Enter student name: Candace Kovacek
+Student with name: Candace Kovacek was deleted
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 3
+
+Menu - Select:
+  (a) Select record to display using student ID
+  (b) Select record to display using studentś name
+  (c) Display all records
+
+Option: c
+Name: Brittany Carter
+Email: brittany.carter@email.com
+Phone: +251 743.443.9472 x1254
+Address: 3064 Spinka Highway Boscoside Oklahoma 74023
+Major: Computer Science
+Rank: NA
+GPA: 2.3
+
+Name: Carlos Aguilera
+Email: Aguilera@gmail.com
+Phone: (949) 973-1274
+Address: 26524 Paseo Santa Clara San Juan Capistrano CA 92675
+Major: Computer Science
+Rank: NA
+GPA: 3.5
+
+Name: Elliot Goodwin
+Email: elliot.goodwin@email.com
+Phone: +256 383.778.2780 x9343
+Address: 661 Yanira Corners East Micah Delaware 35844
+Major: Math
+Rank: NA
+GPA: 1.9
+
+Name: Emogene Murazik
+Email: emogene.murazik@email.com
+Phone: +260 1-253-211-7583 x315
+Address: 91704 Bashirian Courts Stantonmouth California 85573
+Major: Math
+Rank: NA
+GPA: 3
+
+Name: Rosenda Koepp
+Email: rosenda.koepp@email.com
+Phone: +964 195.667.4139 x42913
+Address: 163 Rosie Island Gottliebberg Virginia 19006
+Major: Computer Science
+Rank: NA
+GPA: 4.3
+
+Name: Samara Mueller
+Email: samara.mueller@email.com
+Phone: +248 183-416-4558 x4270
+Address: 9774 Welch Hill Adalbertoport Nevada 42511
+Major: Computer Science
+Rank: NA
+GPA: 4
+
+Name: Scottie O'Reilly
+Email: scottie.o'reilly@email.com
+Phone: +229 (512) 293-0249
+Address: 58504 Strosin Way Port Modesto Arizona 19453
+Major: Math
+Rank: NA
+GPA: 3.8
+
+Name: Selena Rowe
+Email: selena.rowe@email.com
+Phone: +48 1-572-863-9817 x10077
+Address: 1254 Shavonda Heights East Tuanfort California 53630
+Major: Math
+Rank: NA
+GPA: 1.8
+
+Name: Shelly Paucek
+Email: shelly.paucek@email.com
+Phone: +371 1-623-210-5778
+Address: 49089 Alona Meadows Port Luna Colorado 6032
+Major: Computer Science
+Rank: NA
+GPA: 2.3
+
+Name: Shizuko Murphy
+Email: shizuko.murphy@email.com
+Phone: +299 1-278-225-6723 x2546
+Address: 131 Denis Highway Howardland Nebraska 97886
+Major: Accounting
+Rank: NA
+GPA: 3.4
+
+Name: Vincenza Heaney
+Email: vincenza.heaney@email.com
+Phone: +500 718-683-8791 x9762
+Address: 10572 Anthony Greens Port Wendell Hawaii 23592
+Major: Accounting
+Rank: NA
+GPA: 5
+
+Name: Zona Conroy
+Email: zona.conroy@email.com
+Phone: +66 (547) 081-0493 x9733
+Address: 8433 Senger Wells Natishaland Georgia 61866
+Major: Computer Science
+Rank: NA
+GPA: 1.4
+
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 1
+
+New Student Information
+  ID: 5432
+  Last Name: Darling
+  First Name: Connor
+  Email: Connor@emal.com
+  Phone: 9495459312
+  Street: 345 La Pax Toad
+  City: Toad City
+  State: CA
+  Zip: 84521
+  School Major: CS
+  School Rank: NA
+  School GPA: 4.0
+Inserted student with id: 5432 into the database
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 3
+
+Menu - Select:
+  (a) Select record to display using student ID
+  (b) Select record to display using studentś name
+  (c) Display all records
+
+Option: c
+Name: Brittany Carter
+Email: brittany.carter@email.com
+Phone: +251 743.443.9472 x1254
+Address: 3064 Spinka Highway Boscoside Oklahoma 74023
+Major: Computer Science
+Rank: NA
+GPA: 2.3
+
+Name: Carlos Aguilera
+Email: Aguilera@gmail.com
+Phone: (949) 973-1274
+Address: 26524 Paseo Santa Clara San Juan Capistrano CA 92675
+Major: Computer Science
+Rank: NA
+GPA: 3.5
+
+Name: Connor Darling
+Email: Connor@emal.com
+Phone: 9495459312
+Address: 345 La Pax Toad Toad City CA 84521
+Major: CS
+Rank: NA
+GPA: 4
+
+Name: Elliot Goodwin
+Email: elliot.goodwin@email.com
+Phone: +256 383.778.2780 x9343
+Address: 661 Yanira Corners East Micah Delaware 35844
+Major: Math
+Rank: NA
+GPA: 1.9
+
+Name: Emogene Murazik
+Email: emogene.murazik@email.com
+Phone: +260 1-253-211-7583 x315
+Address: 91704 Bashirian Courts Stantonmouth California 85573
+Major: Math
+Rank: NA
+GPA: 3
+
+Name: Rosenda Koepp
+Email: rosenda.koepp@email.com
+Phone: +964 195.667.4139 x42913
+Address: 163 Rosie Island Gottliebberg Virginia 19006
+Major: Computer Science
+Rank: NA
+GPA: 4.3
+
+Name: Samara Mueller
+Email: samara.mueller@email.com
+Phone: +248 183-416-4558 x4270
+Address: 9774 Welch Hill Adalbertoport Nevada 42511
+Major: Computer Science
+Rank: NA
+GPA: 4
+
+Name: Scottie O'Reilly
+Email: scottie.o'reilly@email.com
+Phone: +229 (512) 293-0249
+Address: 58504 Strosin Way Port Modesto Arizona 19453
+Major: Math
+Rank: NA
+GPA: 3.8
+
+Name: Selena Rowe
+Email: selena.rowe@email.com
+Phone: +48 1-572-863-9817 x10077
+Address: 1254 Shavonda Heights East Tuanfort California 53630
+Major: Math
+Rank: NA
+GPA: 1.8
+
+Name: Shelly Paucek
+Email: shelly.paucek@email.com
+Phone: +371 1-623-210-5778
+Address: 49089 Alona Meadows Port Luna Colorado 6032
+Major: Computer Science
+Rank: NA
+GPA: 2.3
+
+Name: Shizuko Murphy
+Email: shizuko.murphy@email.com
+Phone: +299 1-278-225-6723 x2546
+Address: 131 Denis Highway Howardland Nebraska 97886
+Major: Accounting
+Rank: NA
+GPA: 3.4
+
+Name: Vincenza Heaney
+Email: vincenza.heaney@email.com
+Phone: +500 718-683-8791 x9762
+Address: 10572 Anthony Greens Port Wendell Hawaii 23592
+Major: Accounting
+Rank: NA
+GPA: 5
+
+Name: Zona Conroy
+Email: zona.conroy@email.com
+Phone: +66 (547) 081-0493 x9733
+Address: 8433 Senger Wells Natishaland Georgia 61866
+Major: Computer Science
+Rank: NA
+GPA: 1.4
+
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 4
+
+DATABASE SORTED BY NAME
+
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 3
+
+Menu - Select:
+  (a) Select record to display using student ID
+  (b) Select record to display using studentś name
+  (c) Display all records
+
+Option: a
+Enter student id: 5323
+No student with id: 5323 was found
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 3
+
+Menu - Select:
+  (a) Select record to display using student ID
+  (b) Select record to display using studentś name
+  (c) Display all records
+
+Option: a
+Enter student id: 5432
+
+Name: Connor Darling
+Email: Connor@emal.com
+Phone: 9495459312
+Address: 345 La Pax Toad Toad City CA 84521
+Major: CS
+Rank: NA
+GPA: 4
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 4
+
+DATABASE SORTED BY NAME
+
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 2
+
+Menu - Select:
+  (a) Select record to delete using student ID
+  (b) Select record to delete using student's name
+
+Option: a
+Enter student id: 6352
+Student with id: 6352 was deleted
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 2
+
+Menu - Select:
+  (a) Select record to delete using student ID
+  (b) Select record to delete using student's name
+
+Option: a
+Enter student id: 9930
+Student with id: 9930 was deleted
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 5
+
+DATABASE CLOSED!
+==191807== 
+==191807== HEAP SUMMARY:
+==191807==     in use at exit: 0 bytes in 0 blocks
+==191807==   total heap usage: 720 allocs, 720 frees, 177,147 bytes allocated
+==191807== 
+==191807== All heap blocks were freed -- no leaks are possible
+==191807== 
+==191807== For lists of detected and suppressed errors, rerun with: -s
+==191807== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[2m⏎(B[m                                                                                                                                                               ⏎ [K[?2004h]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# [Kvalgrind --leak-check=full ./hw04[33D[38;5;26mvalgrind[30m(B[m [38;5;39m--leak-check=full[30m(B[m [38;5;39m[4m./hw04[30m(B[m
+[30m(B[m[?2004l]0;valgrind /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m==191850== Memcheck, a memory error detector
+==191850== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==191850== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==191850== Command: ./hw04
+==191850== 
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 1
+
+New Student Information
+  ID: 7632
+  Last Name: Los
+  First Name: Big
+  Email: gui@gmail.com
+  Phone: (949) 943-1232
+  Street: 453 paseo tiny tim
+  City: tim world
+  State: ca
+  Zip: 84321
+  School Major: Accounting
+  School Rank: NA
+  School GPA: 4.0
+Inserted student with id: 7632 into the database
+
+Menu - Select:
+  1. Add a record
+  2. Delete a record
+  3. Display database contents on screen
+  4. Sort database by names
+  5. Save and Exit
+
+Option: 5
+
+DATABASE CLOSED!
+==191850== 
+==191850== HEAP SUMMARY:
+==191850==     in use at exit: 0 bytes in 0 blocks
+==191850==   total heap usage: 205 allocs, 205 frees, 110,224 bytes allocated
+==191850== 
+==191850== All heap blocks were freed -- no leaks are possible
+==191850== 
+==191850== For lists of detected and suppressed errors, rerun with: -s
+==191850== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[2m⏎(B[m                                                                                                                                                               ⏎ [K[?2004h]0;fish /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[92mroot(B[m@(B[mip-172-31-22-46(B[m [31m/h/a/D/C/C/H/HW04(B[m (master)(B[m# [Ke[38;5;196me[30m(B[m[38;5;240mxit[30m(B[m[38;5;196mx[38;5;240mit[30m(B[m[38;5;26mex[38;5;240mit[30m(B[m[38;5;26mi[38;5;240mt[30m(B[m[38;5;196mexi[38;5;240mt[30m(B[m[38;5;196mt[30m(B[m[38;5;26mexit[30m(B[m
+[30m(B[m[?2004l]0;exit /home/admin/Dev/CC/CS1C/HW/HW04[30m(B[m[30m(B[m[?2004l
+Script done on 2022-10-11 05:18:34+00:00 [COMMAND_EXIT_CODE="0"]

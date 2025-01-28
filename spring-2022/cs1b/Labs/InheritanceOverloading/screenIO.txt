@@ -1,0 +1,394 @@
+***********************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #14       : Inheritance, Overloading, & Redefining
+***********************************************************
+
+ENTRY MENU:
+1 - Initialize Animals
+0 - Exit
+Enter selection: d
+
+ERROR: [Input stores integers]
+
+ENTRY MENU:
+1 - Initialize Animals
+0 - Exit
+Enter selection: 10
+
+ERROR: [Invalid MIN or MAX]
+
+ENTRY MENU:
+1 - Initialize Animals
+0 - Exit
+Enter selection: 1
+
+ERROR CODE: [Invalid Age]
+Name:     Danny
+Age:      4294967295
+TailType: Straight
+[Initialization failed on this Pig]
+
+ERROR CODE: [Invalid TailType]
+Name:     Brown
+Age:      6
+TailType: Curl In
+[Initialization failed on this Pig]
+
+ERROR CODE: [Invalid Age]
+Name:      La La
+Age:       21
+WoolType:  Long
+WoolColor: Black
+[Initialization failed on this Sheep]
+
+ERROR CODE: [Invalid Age]
+Name:      Connor
+Age:       4294967295
+WoolType:  Granite
+WoolColor: Black
+[Initialization failed on this Sheep]
+
+ERROR CODE: [Invalid WoolColor]
+Name:      LOS
+Age:       6
+WoolType:  Long
+WoolColor: Blue
+[Initialization failed on this Sheep]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: d
+
+ERROR: [Input stores integers]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: -1
+
+ERROR: [Invalid MIN or MAX]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 1
+
+ERROR CODE: [Invalid Age]
+Name:      La La
+Age:       21
+WoolType:  Long
+WoolColor: Black
+[Initialization failed on this Sheep]
+
+ERROR CODE: [Invalid Age]
+Name:      Connor
+Age:       4294967295
+WoolType:  Granite
+WoolColor: Black
+[Initialization failed on this Sheep]
+
+ERROR CODE: [Invalid WoolColor]
+Name:      LOS
+Age:       6
+WoolType:  Long
+WoolColor: Blue
+[Initialization failed on this Sheep]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 2
+
+ERROR CODE: [Invalid Age]
+Name:     Danny
+Age:      4294967295
+TailType: Straight
+[Initialization failed on this Pig]
+
+ERROR CODE: [Invalid TailType]
+Name:     Brown
+Age:      6
+TailType: Curl In
+[Initialization failed on this Pig]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 4
+
+THE SHEEP:
+
+NAME       AGE  WOOLTYPE  COLOR
+---------  ---  --------  -----
+Fluffy      1   Fine      White
+Carlos      4   Carpet    Black
+Linda       8   Medium    White
+
+THE PIG(S):
+
+NAME       AGE  TAILTYPE
+---------  ---  ----------
+Babe        4   Corkscrew 
+Wilbur      7   Curl Up   
+Beast       2   Straight  
+Ron         3   Curl Right
+Jessi       8   Curl Left 
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 3
+
+ANIMAL MENU:
+1 - Sheep
+2 - Pig
+0 - Exit
+Enter selection: d
+
+ERROR: [Input stores integers]
+
+ANIMAL MENU:
+1 - Sheep
+2 - Pig
+0 - Exit
+Enter selection: 5
+
+ERROR: [Invalid MIN or MAX]
+
+ANIMAL MENU:
+1 - Sheep
+2 - Pig
+0 - Exit
+Enter selection: 1
+
+SHEEP LIVESTOCK LIST:
+1. Fluffy
+2. Carlos
+3. Linda
+
+Enter selection: d
+
+ERROR: [Input stores integers]
+
+Enter selection: 5
+
+ERROR: [Invalid MIN or MAX]
+
+Enter selection: 2
+
+Enter Age: 5
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 4
+
+THE SHEEP:
+
+NAME       AGE  WOOLTYPE  COLOR
+---------  ---  --------  -----
+Fluffy      1   Fine      White
+Carlos      5   Carpet    Black
+Linda       8   Medium    White
+
+THE PIG(S):
+
+NAME       AGE  TAILTYPE
+---------  ---  ----------
+Babe        4   Corkscrew 
+Wilbur      7   Curl Up   
+Beast       2   Straight  
+Ron         3   Curl Right
+Jessi       8   Curl Left 
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 3
+
+ANIMAL MENU:
+1 - Sheep
+2 - Pig
+0 - Exit
+Enter selection: 2
+
+PIG LIVESTOCK LIST:
+1. Babe
+2. Wilbur
+3. Beast
+4. Ron
+5. Jessi
+
+Enter selection: 4
+
+Enter Age: d
+
+ERROR: [Input stores integers]
+
+Enter Age: 11
+
+ERROR: [Invalid MIN or MAX]
+
+Enter Age: 4
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 4
+
+THE SHEEP:
+
+NAME       AGE  WOOLTYPE  COLOR
+---------  ---  --------  -----
+Fluffy      1   Fine      White
+Carlos      5   Carpet    Black
+Linda       8   Medium    White
+
+THE PIG(S):
+
+NAME       AGE  TAILTYPE
+---------  ---  ----------
+Babe        4   Corkscrew 
+Wilbur      7   Curl Up   
+Beast       2   Straight  
+Ron         4   Curl Right
+Jessi       8   Curl Left 
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 1
+
+ERROR CODE: [Invalid Age]
+Name:      La La
+Age:       21
+WoolType:  Long
+WoolColor: Black
+[Initialization failed on this Sheep]
+
+ERROR CODE: [Invalid Age]
+Name:      Connor
+Age:       4294967295
+WoolType:  Granite
+WoolColor: Black
+[Initialization failed on this Sheep]
+
+ERROR CODE: [Invalid WoolColor]
+Name:      LOS
+Age:       6
+WoolType:  Long
+WoolColor: Blue
+[Initialization failed on this Sheep]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 4
+
+THE SHEEP:
+
+NAME       AGE  WOOLTYPE  COLOR
+---------  ---  --------  -----
+Fluffy      1   Fine      White
+Carlos      4   Carpet    Black
+Linda       8   Medium    White
+
+THE PIG(S):
+
+NAME       AGE  TAILTYPE
+---------  ---  ----------
+Babe        4   Corkscrew 
+Wilbur      7   Curl Up   
+Beast       2   Straight  
+Ron         4   Curl Right
+Jessi       8   Curl Left 
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 2
+
+ERROR CODE: [Invalid Age]
+Name:     Danny
+Age:      4294967295
+TailType: Straight
+[Initialization failed on this Pig]
+
+ERROR CODE: [Invalid TailType]
+Name:     Brown
+Age:      6
+TailType: Curl In
+[Initialization failed on this Pig]
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 4
+
+THE SHEEP:
+
+NAME       AGE  WOOLTYPE  COLOR
+---------  ---  --------  -----
+Fluffy      1   Fine      White
+Carlos      4   Carpet    Black
+Linda       8   Medium    White
+
+THE PIG(S):
+
+NAME       AGE  TAILTYPE
+---------  ---  ----------
+Babe        4   Corkscrew 
+Wilbur      7   Curl Up   
+Beast       2   Straight  
+Ron         3   Curl Right
+Jessi       8   Curl Left 
+
+MAIN MENU:
+1 - Re-Initialize Sheep
+2 - Re-Initialize Pigs
+3 - Change Age
+4 - Display
+0 - Exit
+Enter selection: 0

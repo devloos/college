@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane fx:id="root" xmlns:fx="Login-ns" stylesheets="@../../assets/login.css,@../../assets/utility.css">
+  <top>
+    <VBox fx:id="title" />
+  </top>
+  <center>
+    <VBox fx:id="menu" spacing="15">
+      <Button styleClass="btn" text="Single Player" />
+      <Button styleClass="btn" text="Multiplayer" onAction="#userChoseMode" />
+    </VBox>
+  </center>
+  <bottom>
+    <HBox alignment="center">
+      <Label styleClass="label" text="Footer" />
+    </HBox>
+  </bottom>
+</BorderPane>

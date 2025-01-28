@@ -1,0 +1,22 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #3        : GCD
+****************************************************
+
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #3        : GCD
+****************************************************
+
+The GCD for 72 & 32 = 8
+
+The GCD for 99 & 30 = 3
+
+The GCD for 0 & 0 = 0
+
+The GCD for 0 & 0 = 0
+

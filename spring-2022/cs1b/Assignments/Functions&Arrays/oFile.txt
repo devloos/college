@@ -1,0 +1,36 @@
+Larger Balance:
+ID #     NAME                     BALANCE DUE
+----     --------------------     -----------
+1002     Steve Woolston           $    1423.2
+
+Smaller Balance:
+ID #     NAME                     BALANCE DUE
+----     --------------------     -----------
+1003     Don McBride              $     12.32
+
+Sum of Balance for all persons:
+$   4080.48
+
+Average Balance for all persons:
+$    408.05
+
+Search Name:
+ID #     NAME                     BALANCE DUE
+----     --------------------     -----------
+1002     Steve Woolston           $    1423.2
+
+Search Name:
+ID #     NAME                     BALANCE DUE
+----     --------------------     -----------
+1008     Chris Carroll            $     32.35
+
+Search Name:
+ID #     NAME                     BALANCE DUE
+----     --------------------     -----------
+1007     Pete McBride             $    500.32
+
+Search Name:
+ID #     NAME                     BALANCE DUE
+----     --------------------     -----------
+1001     Jean Rousseau            $      15.5
+

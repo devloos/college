@@ -1,0 +1,14 @@
+Something I am taking away from this video is that value categories are just expressions.
+This started to make more sense as the video progressed reason being is because Kris gave an example
+that demonstrated a test. It was creating a variable like this int &&x = 10; and asked the audience
+whether this was an rvalue or an lvalue. Of course, if you were paying attention he explicitly states
+that value categories are about expressions and types don't matter. The answer to this question was that it was an lvalue.
+I also found it interesting how the resulting expression of a string literal is an lvalue, although this makes sense because
+the string literal is placed in the memory of the executable itself. The string literal has an address there for it is locatable.
+I could better understand the use of glvalue and rvalue in depth, which are used to categorize the primary value categories.
+I ran into copy elision a few months back when working on some side projects, this really stumped me because I was confused about why
+my copy constructor was not firing. When I dug a bit deeper, I started to learn rvo and copy elision, it blows my mind at an example Kris gave about
+nrvo. Kris shows an example of where nrvo would work still, this example explained constructing a variable in a function "using it" and then returning said
+variable. Kris explains that we do get return value optimization and that's nuts, reason so is that the compiler understands that eventually that scope
+will end and will place it in the return slot. Kris does explain how nrvo can be janky and is why you should always implement move operations in your
+user-defined types so that the compiler has something to fall back on that's better than a copy.

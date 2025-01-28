@@ -1,0 +1,35 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #4        : Intro to Arrays
+****************************************************
+
+Enter name #1: Joe
+Enter name #2: Sally
+Enter name #3: Joe
+Enter name #4: Sue
+Enter name #5: Sally
+Enter name #6: Adam
+Enter name #7: Joe
+Enter name #8: Adam
+Enter name #9: Adam
+Enter name #10: Joe
+
+Who do you want to search for(enter done to exit)? Joe
+There are 4 instances of the name Joe.
+
+Who do you want to search for(enter done to exit)? Sally
+There are 2 instances of the name Sally.
+
+Who do you want to search for(enter done to exit)? Adam
+There are 3 instances of the name Adam.
+
+Who do you want to search for(enter done to exit)? Sue
+There is one instance of the name Sue.
+
+Who do you want to search for(enter done to exit)? John
+John's name does not exist in the list.
+
+Who do you want to search for(enter done to exit)? done
+Thank you for using my program!

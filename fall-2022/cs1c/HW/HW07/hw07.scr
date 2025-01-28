@@ -1,0 +1,93 @@
+Script started on Fri Nov  4 20:04:04 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2# l
+bash: l: command not found
+bash-3.2# ls -la
+total 48
+drwxr-xr-x  13 ca    staff   416 Nov  4 20:04 .
+drwxr-xr-x   8 ca    staff   256 Nov  4 18:18 ..
+-rw-r--r--   1 ca    staff  6717 Nov  4 18:18 .clang-format
+-rw-r--r--   1 ca    staff   300 Nov  4 18:18 .gitignore
+drwxr-xr-x   5 ca    staff   160 Nov  4 18:18 .vscode
+-rw-r--r--   1 ca    staff   588 Nov  4 19:28 CMakeLists.txt
+-rw-r--r--   1 ca    staff   278 Nov  4 19:44 Makefile
+drwxr-xr-x   3 ca    staff    96 Nov  4 18:18 bin
+drwxr-xr-x   7 ca    staff   224 Nov  4 19:32 build
+-rw-r--r--   1 root  staff    43 Nov  4 20:04 hw07.scr
+drwxr-xr-x   3 ca    staff    96 Nov  4 18:18 include
+drwxr-xr-x   3 ca    staff    96 Nov  4 18:18 lib
+drwxr-xr-x   3 ca    staff    96 Nov  4 18:18 src
+bash-3.2# date
+Fri Nov  4 20:04:19 PDT 2022
+bash-3.2# make
+g++ -std=c++17 -c src/core/hw07.cpp -o hw07.o
+g++ -std=c++17 -c src/core/hw07f.cpp -o hw07f.o
+g++ -std=c++17 -o hw07 hw07.o hw07f.o
+bash-3.2# ./hw07 
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: no
+
+ERROR: INVALID INPUT
+bash-3.2# ./hw07 
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: 1
+
+Enter string: madam
+The string madam is a palindrome
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: 1
+
+Enter string: carlos
+The string carlos is NOT a palindrome
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: 1
+
+Enter string: kayak
+The string kayak is a palindrome
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: 1
+
+Enter string: repaper
+The string repaper is a palindrome
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: rappar
+
+ERROR: INVALID INPUT
+bash-3.2# ./hw07 
+   
+IS YOUR STRING A PALINDROME?
+-----------------------------------
+EXIT: 0
+RUN: 1
+Enter option: 0
+bash-3.2# exit
+exit
+
+Script done on Fri Nov  4 20:06:18 2022

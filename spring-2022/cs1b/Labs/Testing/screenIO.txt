@@ -1,0 +1,24 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #7        : Testing
+****************************************************
+
+
+Enter number of Sheep: 4
+Enter number of Chocolate Bars: 3
+Number of remaining Chocolate Bars: 3
+Number of Chocolate Bars each sheep got: 0 
+
+Enter number of Sheep: A
+Input was invalid try again!!
+Enter number of Sheep: 0
+Enter number of Chocolate Bars: 4
+Number of remaining Chocolate Bars: 4
+Number of Chocolate Bars each sheep got: 0 
+
+Enter number of Sheep: 4
+Enter number of Chocolate Bars: 16
+Number of remaining Chocolate Bars: 0
+Number of Chocolate Bars each sheep got: 4

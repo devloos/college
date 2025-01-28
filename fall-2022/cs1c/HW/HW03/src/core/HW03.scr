@@ -1,0 +1,36 @@
+Script started on Mon Sep 26 14:47:24 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2# date
+Mon Sep 26 14:47:28 PDT 2022
+bash-3.2# ls -la
+total 48
+drwxr-xr-x  8 ca    staff   256 Sep 26 14:47 .
+drwxr-xr-x  3 ca    staff    96 Sep 13 14:18 ..
+-rw-r--r--  1 root  staff    43 Sep 26 14:47 HW03.scr
+-rw-r--r--  1 ca    staff   300 Sep 26 14:45 Makefile
+-rw-r--r--  1 ca    staff  1390 Sep 13 23:41 hw03.cpp
+-rw-r--r--  1 ca    staff   110 Sep 13 16:22 hw03.h
+-rw-r--r--  1 ca    staff  3413 Sep 26 14:37 hw03f.cpp
+-rw-r--r--  1 ca    staff  2492 Sep 14 23:12 hw03f.h
+bash-3.2# make all
+g++ -std=c++17 -c hw03.cpp -o hw03.o
+g++ -std=c++17 -c hw03f.cpp -o hw03f.o
+g++ -std=c++17 -o hw03 hw03.o hw03f.o
+bash-3.2# ./hw03 
+My String Program
+
+Test String: Carlos Aguilera
+
+Reverse: areliugA solraC
+Copy Constructor: Carlos Aguilera
+Move Constructor: Carlos Aguilera
+Adding Jr to end: Carlos Aguilera Jr
+Comparison with Dr. B [true or false]: false
+Index of [s]: 5
+bash-3.2# exit
+exit
+
+Script done on Mon Sep 26 14:47:52 2022

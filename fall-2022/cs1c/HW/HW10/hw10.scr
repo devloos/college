@@ -1,0 +1,157 @@
+Script started on 2022-11-24 07:34:03+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="192" LINES="52"]
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# date
+[?2004lThu Nov 24 07:34:08 UTC 2022
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# ls -la
+[?2004ltotal 104
+drwxr-xr-x 9 admin admin  4096 Nov 24 07:33 .
+drwxr-xr-x 9 admin admin  4096 Nov 24 07:11 ..
+-rw-r--r-- 1 admin admin  6717 Nov 24 07:11 .clang-format
+-rw-r--r-- 1 admin admin   300 Nov 24 07:11 .gitignore
+drwxr-xr-x 2 admin admin  4096 Nov 24 07:13 .vscode
+-rw-r--r-- 1 admin admin   587 Nov 24 07:11 CMakeLists.txt
+-rw-r--r-- 1 admin admin   310 Nov 24 07:31 Makefile
+drwxr-xr-x 2 admin admin  4096 Nov 24 07:11 bin
+drwxr-xr-x 3 admin admin  4096 Nov 24 07:13 build
+-rwxr-xr-x 1 root  root  48752 Nov 24 07:33 hw10
+-rw-r--r-- 1 root  root      0 Nov 24 07:34 hw10.scr
+drwxr-xr-x 2 admin admin  4096 Nov 24 07:11 include
+drwxr-xr-x 2 admin admin  4096 Nov 24 07:11 lib
+drwxr-xr-x 2 admin admin  4096 Nov 24 07:33 obj
+drwxr-xr-x 3 admin admin  4096 Nov 24 07:11 src
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# make
+[?2004lmake: Nothing to be done for 'all'.
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# make clean
+[?2004lrm -f hw10 obj/*.o
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# make
+[?2004lg++ -std=c++17 -c src/core/hw10.cpp -o obj/hw10.o
+g++ -std=c++17 -c src/core/ctor.cpp -o obj/ctor.o
+g++ -std=c++17 -o hw10 obj/hw10.o obj/ctor.o
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# ./hw10 
+[?2004ldefault constructor:
+default ctor: [1]<empty>
+ctor = [1]<empty>
+
+constructor with parameters:
+ctor(cs1c): [2]cs1c
+ctor(student): [3]student
+obj01 = [2]cs1c
+obj02 = [3]student
+
+copy constructor:
+cass([2]cs1c): [2]cs1c
+cctor([2]cs1c): [2]cs1c
+obj01 = [2]cs1c
+obj11 = [2]cs1c
+
+move constructor:
+mctor([2]cs1c): mass([2]cs1c): [2]cs1c
+[2]cs1c
+obj01 = [-2]<empty>
+obj21 = [2]cs1c
+
+copy assignment operator:
+default ctor: [4]<empty>
+cass([3]student): [3]student
+obj02 = [3]student
+obj12 = [3]student
+
+move assignment operator 1:
+default ctor: [5]<empty>
+ctor(cs1cstudent): [6]cs1cstudent
+operator+() returns: [6]cs1cstudent
+mass([6]cs1cstudent): [6]cs1cstudent
+dtor: [-6]<empty>
+obj11obj12 = [6]cs1cstudent
+     obj11 = [2]cs1c
+     obj12 = [3]student
+
+move assignment operator 2:
+default ctor: [7]<empty>
+ctor(cs1cstudent): [8]cs1cstudent
+add() returns: [8]cs1cstudent
+mass([8]cs1cstudent): [8]cs1cstudent
+dtor: [-8]<empty>
+obj11obj12r = [8]cs1cstudent
+     obj11 = [2]cs1c
+     obj12 = [3]student
+
+move assignment operator 3:
+default ctor: [9]<empty>
+mass([3]student): [3]student
+obj02 = [-3]<empty>
+obj02m = [3]student
+
+moved return rvalue 1:
+ctor(Hi): [10]Hi
+ctor(Mom): [11]Mom
+ctor(HiMom): [12]HiMom
+operator+() returns: [12]HiMom
+himom = [12]HiMom
+
+moved return rvalue 2:
+ctor(go): [13]go
+ctor(bobcats): [14]bobcats
+ctor(gobobcats): [15]gobobcats
+add() returns: [15]gobobcats
+gobobcats = [15]gobobcats
+
+append an lvalue to a vector container:
+cass([15]gobobcats): [15]gobobcats
+cctor([15]gobobcats): [15]gobobcats
+v[0] = [15]gobobcats
+
+append an rvalue to a vector container:
+ctor(gobobcats): [16]gobobcats
+operator+() returns: [16]gobobcats
+mctor([16]gobobcats): mass([16]gobobcats): [16]gobobcats
+[16]gobobcats
+dtor: [-16]<empty>
+v[1] = [16]gobobcats
+
+print by value 1:
+cass([2]cs1c): [2]cs1c
+cctor([2]cs1c): [2]cs1c
+function printval: [2]cs1c
+dtor: [2]cs1c
+
+print by value 2:
+ctor(cs1cstudent): [17]cs1cstudent
+operator+() returns: [17]cs1cstudent
+function printval: [17]cs1cstudent
+dtor: [17]cs1cstudent
+
+print by reference:
+function printref: [2]cs1c
+
+print by move 1:
+ctor(cs1cstudent): [18]cs1cstudent
+operator+() returns: [18]cs1cstudent
+function printmov: [18]cs1cstudent
+dtor: [18]cs1cstudent
+
+print by move 2:
+function printmov: [2]cs1c
+function printref: [2]cs1c
+
+end of program
+dtor: [15]gobobcats
+dtor: [16]gobobcats
+dtor: [15]gobobcats
+dtor: [14]bobcats
+dtor: [13]go
+dtor: [12]HiMom
+dtor: [11]Mom
+dtor: [10]Hi
+dtor: [3]student
+dtor: [8]cs1cstudent
+dtor: [6]cs1cstudent
+dtor: [3]student
+dtor: [2]cs1c
+dtor: [2]cs1c
+dtor: [-3]<empty>
+dtor: [-2]<empty>
+dtor: [1]<empty>
+[?2004hroot@ip-172-31-12-227:/home/admin/Dev/CC/CS1C/HW/HW10# exit
+[?2004lexit
+
+Script done on 2022-11-24 07:34:31+00:00 [COMMAND_EXIT_CODE="0"]

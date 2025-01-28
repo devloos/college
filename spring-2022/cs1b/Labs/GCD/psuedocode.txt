@@ -1,0 +1,22 @@
+we need 2 functions to handle printing the header both to the file and console
+
+pass in cout or file name
+void func(ostream &output)
+{
+    output << etc
+}
+
+string func()
+{
+    ostringstream output;
+
+    output << etc
+
+    return output.str()
+}
+
+we now file out or cout like this
+
+std::cout << func();
+or 
+infile << func();

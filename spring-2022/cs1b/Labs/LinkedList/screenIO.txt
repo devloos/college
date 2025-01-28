@@ -1,0 +1,113 @@
+****************************************************
+*   PROGRAMMED BY : Carlos Aguilera
+*   CLASS         : CS1B
+*   SECTION       : MW: 7:30p - 9:50p
+*   LAB #8        : Lab Linked Lists
+****************************************************
+
+Enter name of student to search: John Smith
+
+FOUND
+--------
+Name:   John Smith
+Age:    20
+Major:  Math
+GPA:    3.5
+
+John Smith
+------------------
+20
+Math
+3.5
+
+Anna White
+------------------
+19
+English
+3.2
+
+Paul Johnson
+------------------
+18
+Physics
+3.7
+
+Connor Darling
+------------------
+18
+Computer Science
+4
+
+Carlos Aguilera
+------------------
+21
+Computer Science
+4.5
+
+Rand Om
+------------------
+33
+Math
+2.3
+
+Coo Lguy
+------------------
+10
+Science
+3.4
+
+Larry Chad
+------------------
+14
+Science
+2.3
+
+POPPING
+Name:   John Smith
+Age:    20
+Major:  Math
+GPA:    3.5
+
+Average GPA: 3.34286
+
+Anna White
+------------------
+19
+English
+3.2
+
+Paul Johnson
+------------------
+18
+Physics
+3.7
+
+Connor Darling
+------------------
+18
+Computer Science
+4
+
+Carlos Aguilera
+------------------
+21
+Computer Science
+4.5
+
+Rand Om
+------------------
+33
+Math
+2.3
+
+Coo Lguy
+------------------
+10
+Science
+3.4
+
+Larry Chad
+------------------
+14
+Science
+2.3
