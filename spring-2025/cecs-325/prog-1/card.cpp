@@ -1,6 +1,18 @@
+// Name: Carlos Aguilera
+// Class CECS 325-02
+// Project Name Prog 1 – Card War
+// Due Date 02/11/2025
+//
+// I certify that this program is my own original work. I did not copy any part
+// of this program from any other source. I further certify that I typed each
+// and every line of code in this program.
+
 #include "card.h"
 
 #include <iostream>
+#include <unordered_map>
+
+#include "deck.h"
 
 Card::Card() {
   this->suit = 'X';
@@ -21,8 +33,22 @@ void Card::displayCard() const {
 }
 
 int Card::compareCard(const Card &other) const {
-  static const std::unordered_map<char, int> RANK_MAPPINGS = {
-      {'A', 1},
-  };
-  return -1;
+  int thisRankNum = 0;
+  int otherRankNum = 0;
+
+  for (int i = 0; i < NUMBER_OF_RANKS; ++i) {
+    if (this->rank == RANKS[i]) {
+      thisRankNum = i;
+    }
+
+    if (other.rank == RANKS[i]) {
+      otherRankNum = i;
+    }
+  }
+
+  if (thisRankNum == otherRankNum) {
+    return 0;
+  }
+
+  return thisRankNum > otherRankNum ? 1 : -1;
 }
