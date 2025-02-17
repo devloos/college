@@ -1,0 +1,733 @@
+{
+	"tables": {
+		"d7d0d033-239d-4532-bcc0-878e655cd444": {
+			"id": "d7d0d033-239d-4532-bcc0-878e655cd444",
+			"visible": true,
+			"name": "courses",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "c93f6715-fc42-4112-91fd-ac53dceeb27c",
+					"name": "_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "741b53f7-ad2e-4991-88c6-b0f0d05cf296",
+					"name": "name",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 80",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "e3b550ca-5737-4d5b-8125-ffd476b92136",
+					"name": "number",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "7bf2998e-df05-432b-8f7c-4649379e87f1",
+					"name": "sectionNumber",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "a572cf3a-1887-40ad-8c0d-dc6b7688a0b9",
+					"name": "semester",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 15",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "8c63ba97-0e73-4dd4-8a80-029e00cee5bf",
+					"name": "year",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "105c6540-99a2-470d-a3ec-d01b3537d730",
+					"name": "units",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "6aca68b8-7830-40ad-a837-a14273650db3",
+					"name": "roomNumber",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "12c5ee41-7a18-4f7c-8c2c-ce43eedb02bd",
+					"name": "instructor",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 80",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "030061ee-392b-4e39-9820-d38a5d4df011",
+					"name": "building_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": true,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				}
+			],
+			"relations": [
+				"4ebc7575-30fc-4737-b230-962b52a9b6a2",
+				"4795f189-0243-4988-977b-bd57ce14159c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "28d018b5-c52d-4465-ac97-3e3f1b9f23d0",
+					"name": "courses_uk_01",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "9c56fc90-1f18-457b-bc2a-3cd0ed42810c",
+							"colid": "c93f6715-fc42-4112-91fd-ac53dceeb27c"
+						}
+					]
+				}
+			],
+			"indexes": [
+				{
+					"id": "ddf95060-ecf8-420a-a96c-fbb65941342e",
+					"name": "courses_uk_01",
+					"mongodb": {
+						"options": "{\n\"name\": \"courses_uk_01\"\n}",
+						"fields": "{\n\"year\": 1,\n\"semester\": 1\n}"
+					},
+					"cols": []
+				}
+			],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": "",
+			"size": "",
+			"max": "",
+			"validation": "",
+			"capped": false
+		},
+		"c5c5c6af-e46c-4330-be9f-317615dc68f6": {
+			"id": "c5c5c6af-e46c-4330-be9f-317615dc68f6",
+			"visible": true,
+			"name": "departments",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "59501bfd-135f-4ff1-9d24-ccab32015e6f",
+					"name": "_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "b0684352-2525-4d6d-8fbc-ba957893b247",
+					"name": "departmentName",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 80",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "d38ec618-00fb-45d3-93ea-83aa12c33bf4",
+					"name": "departmentAbbreviation",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 15",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "34911a7c-011f-4d39-83a0-0db7086d8782",
+					"name": "courses",
+					"datatype": "311f2d5c-8c4b-4a30-80a8-7c569e11098a",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"list": true,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				}
+			],
+			"relations": [],
+			"lines": [
+				"8ee704bb-385a-42b2-88df-d1d59f2a5a78"
+			],
+			"keys": [
+				{
+					"id": "5575c238-24a5-4ce0-abc1-0862d1093a4e",
+					"name": "department_uk_01",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "f89fe18c-4129-4129-be9b-a52394c01d03",
+							"colid": "59501bfd-135f-4ff1-9d24-ccab32015e6f"
+						}
+					]
+				},
+				{
+					"id": "6f8c392f-2096-4819-af28-775f1fd51100",
+					"isPk": false,
+					"name": "departments_uk_02",
+					"cols": [
+						{
+							"id": "18e38618-eaf3-4518-aae7-696be5ef9d27",
+							"colid": "d38ec618-00fb-45d3-93ea-83aa12c33bf4"
+						}
+					]
+				}
+			],
+			"indexes": [
+				{
+					"id": "31bb739d-b978-40be-9cd6-e2093f78182a",
+					"name": "departments_uk_01",
+					"mongodb": {
+						"options": "{\n\"name\": \"departments_uk_01\",\n\"unique\": true\n}",
+						"fields": "{\n\"departmentAbbreviation\": 1\n}"
+					},
+					"cols": []
+				}
+			],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": "",
+			"size": "",
+			"max": "",
+			"validation": "",
+			"capped": false
+		},
+		"c44185f0-ad6d-41df-a7a0-aa7aca5c8219": {
+			"id": "c44185f0-ad6d-41df-a7a0-aa7aca5c8219",
+			"visible": true,
+			"name": "buildings",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "8efaef7c-63d3-4016-b0b5-df211ab39b3f",
+					"name": "_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "e1508dd3-5ae9-4761-9acb-236b610cce40",
+					"name": "building",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 80",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				}
+			],
+			"relations": [
+				"4795f189-0243-4988-977b-bd57ce14159c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "e270b041-f929-4fc3-a22e-aa383b765b8c",
+					"name": "buildings_uk_01",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "b54c03b5-1efe-4d75-be99-f5773aec35fe",
+							"colid": "8efaef7c-63d3-4016-b0b5-df211ab39b3f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": "",
+			"size": "",
+			"max": "",
+			"validation": "",
+			"capped": false
+		},
+		"311f2d5c-8c4b-4a30-80a8-7c569e11098a": {
+			"id": "311f2d5c-8c4b-4a30-80a8-7c569e11098a",
+			"visible": true,
+			"name": "object",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "c89ca535-8056-4d11-8ce0-6d800a46355a",
+					"name": "course_id",
+					"datatype": "objectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"list": false,
+					"fk": true,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "b1b7484e-ce56-4bb9-8433-0d0338474744",
+					"name": "name",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "maxLength: 80",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				},
+				{
+					"id": "5b3f8d5b-4b40-4dae-80e1-7f676bab4013",
+					"name": "course_number",
+					"datatype": "int",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"list": false,
+					"fk": false,
+					"comment": "",
+					"data": "",
+					"enum": "",
+					"validation": "",
+					"pattern": false,
+					"estimatedSize": "",
+					"any": ""
+				}
+			],
+			"relations": [
+				"4ebc7575-30fc-4737-b230-962b52a9b6a2"
+			],
+			"lines": [
+				"8ee704bb-385a-42b2-88df-d1d59f2a5a78"
+			],
+			"keys": [
+				{
+					"id": "37e11901-dbd6-4726-999e-c787dfeb5788",
+					"name": "courses_uk_01",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "94b64ab8-539f-45e2-a52a-4d97d9928100",
+							"colid": "c89ca535-8056-4d11-8ce0-6d800a46355a"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": true,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"validationLevel": "na",
+			"validationAction": "na",
+			"collation": "",
+			"others": "",
+			"size": "",
+			"max": "",
+			"validation": "",
+			"capped": false
+		}
+	},
+	"relations": {
+		"4ebc7575-30fc-4737-b230-962b52a9b6a2": {
+			"id": "4ebc7575-30fc-4737-b230-962b52a9b6a2",
+			"name": "courses_course_id",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "28d018b5-c52d-4465-ac97-3e3f1b9f23d0",
+			"parent": "d7d0d033-239d-4532-bcc0-878e655cd444",
+			"child": "311f2d5c-8c4b-4a30-80a8-7c569e11098a",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a1990e80-d791-414d-a491-b0b55d7ff145",
+					"parentcol": "c93f6715-fc42-4112-91fd-ac53dceeb27c",
+					"childcol": "c89ca535-8056-4d11-8ce0-6d800a46355a"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"4795f189-0243-4988-977b-bd57ce14159c": {
+			"id": "4795f189-0243-4988-977b-bd57ce14159c",
+			"name": "buildings_building_id",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "e270b041-f929-4fc3-a22e-aa383b765b8c",
+			"parent": "c44185f0-ad6d-41df-a7a0-aa7aca5c8219",
+			"child": "d7d0d033-239d-4532-bcc0-878e655cd444",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a9ea4557-82e3-44c3-852a-37ade9521076",
+					"parentcol": "8efaef7c-63d3-4016-b0b5-df211ab39b3f",
+					"childcol": "030061ee-392b-4e39-9820-d38a5d4df011"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		}
+	},
+	"notes": {},
+	"lines": {
+		"8ee704bb-385a-42b2-88df-d1d59f2a5a78": {
+			"id": "8ee704bb-385a-42b2-88df-d1d59f2a5a78",
+			"name": "containment-line",
+			"desc": "",
+			"style": "dotted",
+			"parent": "c5c5c6af-e46c-4330-be9f-317615dc68f6",
+			"child": "311f2d5c-8c4b-4a30-80a8-7c569e11098a",
+			"parentTableColId": "34911a7c-011f-4d39-83a0-0db7086d8782",
+			"childTableColId": "",
+			"lineColor": "transparent",
+			"markerStart": "none",
+			"markerEnd": "none",
+			"linegraphics": "default",
+			"generate": true,
+			"code": "",
+			"caption": ""
+		}
+	},
+	"model": {
+		"name": "cecs-323",
+		"id": "0c5ca0ef-dfb7-4feb-b723-0b63c0b5c13a",
+		"activeDiagram": "768540e3-049e-4423-ab3c-251d5ba4adad",
+		"desc": "",
+		"path": "",
+		"type": "MONGODB",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": false,
+		"storedin": {
+			"major": 9,
+			"minor": 7,
+			"extra": 0
+		},
+		"laststoredin": {
+			"major": 9,
+			"minor": 7,
+			"extra": 0
+		},
+		"writeFileParam": false,
+		"authorName": "",
+		"companyDetails": "",
+		"companyUrl": "",
+		"def_coltopk": true,
+		"def_validationLevel": "na",
+		"def_validationAction": "na",
+		"def_collation": "",
+		"def_others": "",
+		"connectionVersion": "",
+		"lastSaved": 1739744921052
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"768540e3-049e-4423-ab3c-251d5ba4adad": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "768540e3-049e-4423-ab3c-251d5ba4adad",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"d7d0d033-239d-4532-bcc0-878e655cd444": {
+					"referencedItemId": "d7d0d033-239d-4532-bcc0-878e655cd444",
+					"x": 511,
+					"y": 332,
+					"gHeight": 236,
+					"gWidth": 220,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"c5c5c6af-e46c-4330-be9f-317615dc68f6": {
+					"referencedItemId": "c5c5c6af-e46c-4330-be9f-317615dc68f6",
+					"x": 469,
+					"y": 105,
+					"gHeight": 128,
+					"gWidth": 285,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"c44185f0-ad6d-41df-a7a0-aa7aca5c8219": {
+					"referencedItemId": "c44185f0-ad6d-41df-a7a0-aa7aca5c8219",
+					"x": 176,
+					"y": 179,
+					"gHeight": 63,
+					"gWidth": 192,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"311f2d5c-8c4b-4a30-80a8-7c569e11098a": {
+					"referencedItemId": "311f2d5c-8c4b-4a30-80a8-7c569e11098a",
+					"x": 821,
+					"y": 242,
+					"gHeight": 81,
+					"gWidth": 219,
+					"color": "#ffffff",
+					"background": "transparent",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd",
+			"showHorizontal": true,
+			"showDescriptions": true,
+			"showIndicators": true,
+			"showProgress": true,
+			"lineWidth": "2",
+			"boxSize": "0",
+			"boxSpacing": "2",
+			"boxAlign": "center",
+			"showIndicatorCaptions": true,
+			"showEstimatedSize": false,
+			"showSchemaContainer": true,
+			"showEmbeddedInParents": true,
+			"showCardinalityCaptions": true,
+			"showRelationshipNames": false,
+			"showLineCaptions": false,
+			"showColumns": true,
+			"showColumnDataTypes": true,
+			"showSampleData": false,
+			"showTableIndexes": true,
+			"showTableDescriptions": false,
+			"showRelations": true,
+			"backgroundImage": "na",
+			"descriptionsColor": "transparent",
+			"embeddedSpacing": "2",
+			"showMainIcon": true,
+			"showLabels": true,
+			"showCustomizations": false,
+			"showExportDimensions": false
+		}
+	},
+	"diagramsOrder": [],
+	"order": [],
+	"collapsedTreeItems": [],
+	"reverseStats": {}
+}
