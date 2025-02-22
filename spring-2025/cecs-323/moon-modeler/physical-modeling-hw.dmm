@@ -589,7 +589,7 @@
 		}
 	},
 	"model": {
-		"name": "cecs-323",
+		"name": "physical-modeling-hw",
 		"id": "0c5ca0ef-dfb7-4feb-b723-0b63c0b5c13a",
 		"activeDiagram": "768540e3-049e-4423-ab3c-251d5ba4adad",
 		"desc": "",
@@ -601,7 +601,7 @@
 		"replaceSpace": "_",
 		"color": "transparent",
 		"sideSelections": true,
-		"isDirty": false,
+		"isDirty": true,
 		"storedin": {
 			"major": 9,
 			"minor": 7,
@@ -622,7 +622,7 @@
 		"def_collation": "",
 		"def_others": "",
 		"connectionVersion": "",
-		"lastSaved": 1739744921052
+		"lastSaved": 1739746217585
 	},
 	"otherObjects": {},
 	"diagrams": {
