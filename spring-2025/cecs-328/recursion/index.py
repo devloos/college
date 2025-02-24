@@ -3,9 +3,24 @@ import ast
 from pathlib import Path
 
 
-def find_distance_between_closest_points(points: list[tuple]) -> float:
-    if len(points) < 2:
-        raise Exception()
+def brute_force_cpp(points: list[tuple]) -> list[tuple]:
+    pair = [points[0], points[1]]
+    min_distance = math.dist(pair[0], pair[1])
+
+    for i in range(len(points)):
+        for j in range(i + 1, len(points)):
+            distance = math.dist(points[i], points[j])
+
+            if distance < min_distance:
+                pair = [points[i], points[j]]
+                min_distance = distance
+
+    return pair
+
+
+def find_distance_between_closest_points(points: list[tuple]) -> list[tuple]:
+    if len(points) < 3:
+        return brute_force_cpp(points)
 
     smallest_distance = math.dist(points[0], points[1])
 
