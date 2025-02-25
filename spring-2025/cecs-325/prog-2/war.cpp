@@ -7,14 +7,11 @@
 // of this program from any other source. I further certify that I typed each
 // and every line of code in this program.
 
-#include <algorithm>
 #include <array>
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
-#include <stdexcept>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 const int WON_GAME = 1;
@@ -25,7 +22,7 @@ const std::array<char, 13> RANKS = {'A', '2', '3', '4', '5', '6', '7',
                                     '8', '9', 'X', 'J', 'Q', 'K'};
 
 class Card {
- public:
+public:
   Card(char suit, char rank) {
     this->suit = suit;
     this->rank = rank;
@@ -33,7 +30,7 @@ class Card {
 
   void displayCard() const { std::cout << rank << suit; }
 
-  int compareCard(const Card& other) const {
+  int compareCard(const Card &other) const {
     int thisRankNum = 0;
     int otherRankNum = 0;
 
@@ -54,7 +51,7 @@ class Card {
     return thisRankNum > otherRankNum ? 1 : -1;
   }
 
- private:
+private:
   char suit;
   char rank;
 };
@@ -68,7 +65,7 @@ struct Player {
 };
 
 class Deck {
- public:
+public:
   Deck() {
     for (char suit : SUITS) {
       for (char rank : RANKS) {
@@ -113,13 +110,13 @@ class Deck {
     }
   }
 
- private:
+private:
   std::vector<Card> deck;
 };
 
 int main() {
-  Player firstPlayer = {"Player 1", Card(), 0, 0, 0};
-  Player secondPlayer = {"Player 1", Card(), 0, 0, 0};
+  Player firstPlayer = {"Player 1", Card('X', 'X'), 0, 0, 0};
+  Player secondPlayer = {"Player 1", Card('X', 'X'), 0, 0, 0};
 
   std::cout << "Enter the name of the first player: ";
   std::getline(std::cin, firstPlayer.name);
@@ -186,7 +183,7 @@ int main() {
 
       std::cout << "\n\n";
     }
-  } catch (const char* message) {
+  } catch (const char *message) {
     std::cout << message << "\n\n";
   }
 
