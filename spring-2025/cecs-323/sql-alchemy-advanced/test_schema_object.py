@@ -3,7 +3,7 @@ import logging
 from configparser import ConfigParser
 
 import pytest
-from sqlalchemy.exc import StatementError, DataError
+from sqlalchemy.exc import StatementError, DataError, IntegrityError
 from sqlalchemy.orm import sessionmaker, Session
 
 from starter import metadata, get_test_engine
@@ -96,3 +96,82 @@ def test_delete_schema(db_session: Session):
     count = db_session.query(SchemaObject).filter_by(name=schema_object.name).count()
 
     assert count == 0
+
+
+def test_non_existent_schema(db_session: Session):
+    # store schema object
+    schema_object = get_schema_object()
+    schema_object.schemaName = 'Non Existent Schema'
+    db_session.add(schema_object)
+
+    with pytest.raises(IntegrityError) as IE:
+        db_session.flush()
+
+    assert str(IE.value).find('violates foreign key constraint') > -1
+
+
+def test_delete_parent(db_session: Session):
+    # store schema object
+    schema_object = get_schema_object()
+    db_session.add(schema_object)
+    db_session.flush()
+
+    # delete schema parent
+    schema = get_schema()
+    stored_schema = db_session.query(Schema).filter_by(
+        name=schema.name
+    ).first()
+    db_session.delete(stored_schema)
+
+    with pytest.raises(IntegrityError) as IE:
+        db_session.flush()
+
+    assert str(IE.value).find('violates foreign key constraint') > -1
+
+
+def test_duplicate_schema_object(db_session: Session):
+    schema_object = get_schema_object()
+    db_session.add(schema_object)
+    db_session.flush()
+
+    schema_object = get_schema_object()
+    db_session.add(schema_object)
+
+    with pytest.raises(IntegrityError) as IE:
+        db_session.flush()
+
+    assert str(IE).find(
+        'duplicate key value violates unique constraint "schema_objects_pk_01"') > -1
+
+
+def test_duplicate_schema_object_different_parents(db_session: Session):
+    # Create schema object
+    schema_object = get_schema_object()
+    db_session.add(schema_object)
+    db_session.flush()
+
+    # Insert new schema
+    schema = get_schema()
+    schema.name = 'Another Schema'
+    db_session.add(schema)
+    db_session.flush()
+
+    # Create another schema object with same name but different schema
+    schema_object = get_schema_object()
+    schema_object.schemaName = schema.name
+    db_session.add(schema_object)
+    db_session.flush()
+
+    assert db_session.query(SchemaObject).count() == 2
+
+
+def test_name_too_short_schema_object(db_session: Session):
+    schema_object = get_schema_object()
+    schema_object.name = 'obj'
+
+    db_session.add(schema_object)
+
+    with pytest.raises(IntegrityError) as IE:
+        db_session.flush()
+
+    assert str(IE).find('violates check constraint') > -1

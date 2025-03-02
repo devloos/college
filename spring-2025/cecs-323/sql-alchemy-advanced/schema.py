@@ -1,15 +1,22 @@
+from typing import List
 from starter import Base
-from sqlalchemy import String, PrimaryKeyConstraint, DateTime, Constraint
-from sqlalchemy.orm import Mapped, mapped_column, validates
+from sqlalchemy import String, PrimaryKeyConstraint, DateTime, CheckConstraint
+from sqlalchemy.orm import Mapped, mapped_column, validates, relationship
 from datetime import datetime
 
 
 class Schema(Base):
     __tablename__ = 'schemas'
 
-    name: Mapped[str] = mapped_column('name', String(64), nullable=False)
+    name: Mapped[str] = mapped_column(
+        'name', String(64), CheckConstraint("LENGTH(name) > 5", name='schema_name_min_length'), nullable=False
+    )
     description: Mapped[str] = mapped_column('description', String(128), nullable=False)
     createdAt: Mapped[datetime] = mapped_column('created_at', DateTime, nullable=False)
+
+    schemaObjects: Mapped[List['SchemaObject']] = relationship(  # type: ignore
+        back_populates='schema', passive_deletes='all'
+    )
 
     PrimaryKeyConstraint(name, name="schemas_pk_01")
 

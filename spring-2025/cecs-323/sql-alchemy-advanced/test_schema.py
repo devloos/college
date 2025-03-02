@@ -3,7 +3,7 @@ import logging
 from configparser import ConfigParser
 
 import pytest
-from sqlalchemy.exc import StatementError, DataError
+from sqlalchemy.exc import StatementError, DataError, IntegrityError
 from sqlalchemy.orm import sessionmaker, Session
 
 from starter import metadata, get_test_engine
@@ -84,3 +84,30 @@ def test_delete_schema(db_session: Session):
     count = db_session.query(Schema).filter_by(name=schema.name).count()
 
     assert count == 0
+
+
+def test_duplicate_schema(db_session: Session):
+    schema = get_schema()
+    db_session.add(schema)
+    db_session.flush()
+
+    schema = get_schema()
+    db_session.add(schema)
+
+    with pytest.raises(IntegrityError) as IE:
+        db_session.flush()
+
+    assert str(IE).find(
+        'duplicate key value violates unique constraint "schemas_pk_01"') > -1
+
+
+def test_name_too_short_schema(db_session: Session):
+    schema = get_schema()
+    schema.name = 'SHRT'
+
+    db_session.add(schema)
+
+    with pytest.raises(IntegrityError) as IE:
+        db_session.flush()
+
+    assert str(IE).find('violates check constraint "schema_name_min_length"') > -1
