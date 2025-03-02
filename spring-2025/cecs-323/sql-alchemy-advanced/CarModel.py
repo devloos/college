@@ -1,7 +1,7 @@
 import datetime
 from decimal import Decimal
 
-from orm_base import Base
+from starter import Base
 from sqlalchemy import String, Integer, DECIMAL, PrimaryKeyConstraint, ForeignKeyConstraint, CheckConstraint
 from sqlalchemy.orm import Mapped, mapped_column, validates, relationship
 from Manufacturer import Manufacturer
@@ -21,10 +21,13 @@ class CarModel(Base):
                                                            name='car_model_name_min_length'),
                                            nullable=False)
     modelYear: Mapped[int] = mapped_column('model_year', Integer, nullable=False)
-    fuelEconomyCity: Mapped[int] = mapped_column('fuel_economy_city', Integer, nullable=False)
-    fuelEconomyHwy: Mapped[int] = mapped_column('fuel_economy_hwy', Integer, nullable=False)
+    fuelEconomyCity: Mapped[int] = mapped_column(
+        'fuel_economy_city', Integer, nullable=False)
+    fuelEconomyHwy: Mapped[int] = mapped_column(
+        'fuel_economy_hwy', Integer, nullable=False)
     # This could be validated using a migrated foreign key, or an enumeration.
-    transmissionType: Mapped[str] = mapped_column('transmission_type', String(10), nullable=False)
+    transmissionType: Mapped[str] = mapped_column(
+        'transmission_type', String(10), nullable=False)
     climateControlZones: Mapped[int] = mapped_column('climate_control_zones', Integer,
                                                      nullable=False)
     rangeGasoline: Mapped[int] = mapped_column('range_gasoline', Integer, nullable=False)
@@ -39,7 +42,7 @@ class CarModel(Base):
     ANY check constraint can be added to __table_args__.  But only a check constraint 
     that only references ONE column in the table can be specified as an inline constraint."""
     __table_args__ = (
-        ForeignKeyConstraint([manufacturerName],[Manufacturer.name],
+        ForeignKeyConstraint([manufacturerName], [Manufacturer.name],
                              name='car_model_manufacturer_fk_01'),
         CheckConstraint("manufacturers_suggested_retail_price > 10000",
                         name='car_model_MSRP_minimum'),

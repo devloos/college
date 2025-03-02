@@ -5,10 +5,28 @@ import pytest
 from sqlalchemy.exc import IntegrityError, StatementError, DataError
 from sqlalchemy.orm import sessionmaker
 
-from Utilities import get_test_engine, get_Ford, get_ford_motor_co
-from orm_base import metadata, Base
+from starter import metadata, Base, get_test_engine
 from CarModel import CarModel
 from Manufacturer import Manufacturer
+
+
+def get_Ford(manufacturer: Manufacturer) -> CarModel:
+    """
+    This just stuffs some representative values into an instance of CarModel so that I don't
+    have to do this repeatedly in my test cases.
+    :return: A canned instance of CarModel.
+    """
+    # the setup in TestCarModel creates the Ford manufacturer for me, and I reference it here.
+    car = CarModel(manufacturer, 'Taurus', 1984, 25,
+                   30, 'manual', 1, 350, 0,
+                   20000.35)
+    return car
+
+
+def get_ford_motor_co():
+    ford = Manufacturer('Ford', '123 Ford St. Detroit Michigan')
+    return ford
+
 
 """
 ford_motors is a Manufacturer that I am going to use as a boilerplate.  In this test scenario, it's 
@@ -16,6 +34,7 @@ just there as the parent of our Ford that is stored in car.  I am initializing t
 db_session fixture as part of the setup."""
 ford_motors: Manufacturer
 car: CarModel
+
 
 @pytest.fixture(scope='function')
 def db_session():
@@ -54,6 +73,7 @@ def db_session():
     session.close()
     Base.metadata.drop_all(bind=engine)
 
+
 def test_insert_CarModel(db_session):
     """
     See whether we can insert a car model into the database and verify that it is
@@ -71,6 +91,7 @@ def test_insert_CarModel(db_session):
     # check to make sure that there is one and only one row in the car_model table.
     assert car_count == 1
 
+
 def test_delete_CarModel(db_session):
     db_session.add(car)
     db_session.flush()
@@ -78,21 +99,22 @@ def test_delete_CarModel(db_session):
         filter_by(manufacturerName=car.manufacturerName,
                   modelName=car.modelName,
                   modelYear=car.modelYear).\
-                  count()
+        count()
     assert car_count == 1
     stored_car = db_session.query(CarModel).\
         filter_by(manufacturerName=car.manufacturerName,
                   modelName=car.modelName,
                   modelYear=car.modelYear).\
-                  first()
+        first()
     db_session.delete(stored_car)
     db_session.flush()
     car_count = db_session.query(CarModel).\
         filter_by(manufacturerName=car.manufacturerName,
                   modelName=car.modelName,
                   modelYear=car.modelYear).\
-                  count()
+        count()
     assert car_count == 0
+
 
 def test_duplicate_CarModel(db_session):
     db_session.add(car)
@@ -101,13 +123,16 @@ def test_duplicate_CarModel(db_session):
     db_session.add(car_repeat)
     with pytest.raises(IntegrityError) as IE:
         db_session.flush()
-    assert str(IE).find('duplicate key value violates unique constraint "car_model_pk"') > -1
+    assert str(IE).find(
+        'duplicate key value violates unique constraint "car_model_pk"') > -1
+
 
 def test_bad_type_CarModel(db_session):
     car.rangeElectric = "swanky"
     with pytest.raises(StatementError) as SE:
         db_session.add(car)
         db_session.flush()
+
 
 def test_bad_modelYear_CarModel(db_session):
     with pytest.raises(ValueError) as VE:
@@ -121,12 +146,14 @@ def test_bad_modelYear_CarModel(db_session):
         db_session.flush()
     assert str(VE.value).find('Model year predates Henry Ford') > -1
 
+
 def test_tooLongString_CarModel(db_session):
     with pytest.raises(DataError) as DE:
         car.manufacturerName = "Way Too Long String"
         db_session.add(car)
         db_session.flush()
     assert str(DE.value).find('value too long for type character varying') > -1
+
 
 def test_tooShortString_CarModel(db_session):
     car.modelYear = car.modelYear + 1       # make this a unique car
@@ -137,6 +164,7 @@ def test_tooShortString_CarModel(db_session):
         db_session.flush()
     assert str(IE).find('violates check constraint "car_model_name_min_length"') > -1
 
+
 def test_toolowMSRP_CarModel(db_session):
     car.modelYear = car.modelYear + 1       # make this a unique car
     car.MSRP = 1000                         # make the MSRP too low
@@ -146,9 +174,12 @@ def test_toolowMSRP_CarModel(db_session):
         db_session.flush()
     assert str(IE).find('violates check constraint "car_model_MSRP_minimum"') > -1
 
+
 def test_delete_parent(db_session):
-    stored_manufacturer = db_session.query(Manufacturer).filter_by(name=ford_motors.name).first()
+    stored_manufacturer = db_session.query(
+        Manufacturer).filter_by(name=ford_motors.name).first()
     db_session.delete(stored_manufacturer)
     with pytest.raises(IntegrityError) as IE:
         db_session.flush()
-        assert str(IE).find('violates foreign key constraint "car_model_manufacturer_fk_01" on table "car_models"') > -1
+        assert str(IE).find(
+            'violates foreign key constraint "car_model_manufacturer_fk_01" on table "car_models"') > -1
