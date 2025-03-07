@@ -34,6 +34,7 @@ int main(int argc, char* argv[]) {
     return 1;
   }
 
+  // CustomVector sheesh (i still got it)
   int capacity = 10;
   int size = 0;
   int* arr = new int[capacity];
