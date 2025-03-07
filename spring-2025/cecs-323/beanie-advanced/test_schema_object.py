@@ -54,7 +54,7 @@ async def session() -> AsyncGenerator[AsyncIOMotorClientSession]:
 
 
 @pytest.mark.asyncio
-async def test_insert_schema(session: AsyncIOMotorClientSession):
+async def test_insert_schema_object(session: AsyncIOMotorClientSession):
     schema_object_dict = get_schema_object()
     schema_object_model = SchemaObject(**schema_object_dict)
 
@@ -68,7 +68,7 @@ async def test_insert_schema(session: AsyncIOMotorClientSession):
 
 
 @pytest.mark.asyncio
-async def test_bad_type_schema(session: AsyncIOMotorClientSession):
+async def test_bad_type_schema_object(session: AsyncIOMotorClientSession):
     schema_object_dict = get_schema_object()
     schema_object_dict['createdAt'] = "not a time"
 
@@ -78,7 +78,7 @@ async def test_bad_type_schema(session: AsyncIOMotorClientSession):
 
 
 @pytest.mark.asyncio
-async def test_string_too_long_schema(session: AsyncIOMotorClientSession):
+async def test_string_too_long_schema_object(session: AsyncIOMotorClientSession):
     schema_object_dict = get_schema_object()
     schema_object_dict['name'] = '0' * 84
 
@@ -88,7 +88,7 @@ async def test_string_too_long_schema(session: AsyncIOMotorClientSession):
 
 
 @pytest.mark.asyncio
-async def test_delete_schema(session: AsyncIOMotorClientSession):
+async def test_delete_schema_object(session: AsyncIOMotorClientSession):
     schema_object_dict = get_schema_object()
     schema_object_model = SchemaObject(**schema_object_dict)
 
@@ -153,7 +153,7 @@ async def test_delete_schema(session: AsyncIOMotorClientSession):
 #         'duplicate key value violates unique constraint "schema_objects_pk_01"') > -1
 
 @pytest.mark.asyncio
-async def test_duplicate_schema(session: AsyncIOMotorClientSession):
+async def test_duplicate_schema_object(session: AsyncIOMotorClientSession):
     # insert first schema object
     schema_object_dict = get_schema_object()
     schema_object_model = SchemaObject(**schema_object_dict)
@@ -190,7 +190,7 @@ async def test_duplicate_schema(session: AsyncIOMotorClientSession):
 
 
 @pytest.mark.asyncio
-async def test_name_too_short_schema(session: AsyncIOMotorClientSession):
+async def test_name_too_short_schema_object(session: AsyncIOMotorClientSession):
     schema_object_dict = get_schema_object()
     schema_object_dict['name'] = 'SHRT'
 
