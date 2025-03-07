@@ -1,4 +1,5 @@
-from beanie import Document, Indexed, Link
+from typing import Optional, List
+from beanie import Document, Indexed, Link, BackLink
 from pydantic import Field, ConfigDict, AfterValidator, field_validator
 from datetime import datetime
 from pymongo import IndexModel, ASCENDING

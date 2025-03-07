@@ -8,6 +8,7 @@ from enum import Enum
 
 from Manufacturer import Manufacturer
 
+
 class TransmissionType(str, Enum):
     """
     Just a quick demonstration of how we can constrain a field to a small number of
@@ -36,7 +37,7 @@ class CarModel(Document):
     climateControlZones: int = Field(alias='climate_control_zones', ge=1, le=4)
     rangeGasoline: int = Field(alias='range_gasoline')
     rangeElectric: int = Field(..., alias='range_electric')
-    MSRP:float = Field(alias='manufacturers_suggested_retail_price')
+    MSRP: float = Field(alias='manufacturers_suggested_retail_price')
 
     class Settings:
         # stipulate the name of the collection for this class.
@@ -46,7 +47,7 @@ class CarModel(Document):
                 [('manufacturer_name', pymongo.ASCENDING),
                  ('model_name', pymongo.ASCENDING),
                  ('model_year', pymongo.ASCENDING)
-                ], unique=True, name='car_models_pk')
+                 ], unique=True, name='car_models_pk')
         ]
         write_rules = {"parent": WriteRules.DO_NOTHING}
 

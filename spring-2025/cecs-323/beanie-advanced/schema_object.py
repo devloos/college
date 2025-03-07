@@ -1,9 +1,9 @@
-from beanie import Document, Indexed, Link
-from beanie import Document, Indexed, Link, BeanieObjectId
-from pydantic import Field, ConfigDict, AfterValidator, field_validator
+from beanie import Document, Link
+from pydantic import Field, ConfigDict, field_validator
 from datetime import datetime
 from datetime import datetime
 from pymongo import IndexModel, ASCENDING
+from schema import Schema
 
 
 class SchemaObject(Document):
@@ -19,7 +19,9 @@ class SchemaObject(Document):
     name: str = Field(alias='name', min_length=5, max_length=64)
     description: str = Field(alias='description')
     createdAt: datetime = Field(alias='created_at')
+
     schemaName: str = Field(alias='schema_name')
+    schemaModel: Link[Schema]
 
     @field_validator("description", mode='before')
     def description_validation(cls, description: str) -> str:
