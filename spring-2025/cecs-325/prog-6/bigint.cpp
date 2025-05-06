@@ -1,3 +1,4 @@
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -52,8 +53,15 @@ public:
     return result;
   }
 
-  BigInt operator-(BigInt other) {}
-  BigInt operator-(int other) {}
+  BigInt operator+(int num) {
+    BigInt other(num);
+
+    return *this + other;
+  }
+
+  BigInt operator-(BigInt other) { return BigInt("000000000000000000000"); }
+
+  BigInt operator-(int other) { return BigInt("000000000000000000000"); }
 
   BigInt operator*(BigInt other) {
     BigInt result;
@@ -65,8 +73,8 @@ public:
     return result;
   }
 
-  BigInt operator/(BigInt other) {}
-  BigInt operator%(BigInt other) {}
+  BigInt operator/(BigInt other) { return BigInt("000000000000000000000"); }
+  BigInt operator%(BigInt other) { return BigInt("000000000000000000000"); }
 
   BigInt operator++() {
     int carry = 1;
@@ -96,6 +104,8 @@ public:
     return copy;
   }
 
+  bool operator==(BigInt other) { return this->v == other.v; }
+
   BigInt operator[](int index) { return BigInt(std::to_string(v[index])); }
 
   int size() { return v.size(); }
@@ -104,31 +114,69 @@ public:
     for (int i = v.size() - 1; i >= 0; --i) {
       std::cout << v[i];
     }
-
-    std::cout << '\n';
   }
 
-  BigInt fibo(BigInt num) {}
-  BigInt fact(BigInt num) {}
-  friend BigInt operator+(int, BigInt) {}
+  BigInt fibo() { return BigInt("000000000000000000000"); }
+  BigInt fact() { return BigInt("000000000000000000000"); }
+
+  friend BigInt operator+(int num, BigInt other) { return other + num; }
 
   friend std::ostream &operator<<(std::ostream &ostream, const BigInt &num) {
     for (int i = num.v.size() - 1; i >= 0; --i) {
       ostream << num.v[i];
     }
 
-    ostream << '\n';
-
     return ostream;
   }
 };
 
+void testUnit() {
+  int space = 10;
+  std::cout << "\a\nTestUnit:\n" << std::flush;
+  system("whoami");
+  system("date");
+  // initialize variables
+  BigInt n1(25);
+  BigInt s1("25");
+  BigInt n2(1234);
+  BigInt s2("1234");
+  BigInt n3(n2);
+  BigInt fibo(12345);
+  BigInt fact(50);
+  BigInt imax = INT_MAX;
+  BigInt big("9223372036854775807");
+
+  // display variables
+  std::cout << "n1(int) :" << std::setw(space) << n1 << std::endl;
+  std::cout << "s1(str) :" << std::setw(space) << s1 << std::endl;
+  std::cout << "n2(int) :" << std::setw(space) << n2 << std::endl;
+  std::cout << "s2(str) :" << std::setw(space) << s2 << std::endl;
+  std::cout << "n3(n2) :" << std::setw(space) << n3 << std::endl;
+  std::cout << "fibo(12345):" << std::setw(space) << fibo << std::endl;
+  std::cout << "fact(50) :" << std::setw(space) << fact << std::endl;
+  std::cout << "imax :" << std::setw(space) << imax << std::endl;
+  std::cout << "big :" << std::setw(space) << big << std::endl;
+  std::cout << "big.print(): ";
+  big.print();
+  std::cout << std::endl;
+
+  // compute stuff
+  std::cout << n2 << "/" << n1 << " = " << n2 / n1 << " rem " << n2 % n1
+            << std::endl;
+  std::cout << "fibo(" << fibo << ") = " << fibo.fibo() << std::endl;
+  std::cout << "fact(" << fact << ") = " << fact.fact() << std::endl;
+  std::cout << "10 + n1 = " << 10 + n1 << std::endl;
+  std::cout << "n1 + 10 = " << n1 + 10 << std::endl;
+  std::cout << "(n1 == s1)? --> " << ((n1 == s1) ? "true" : "false")
+            << std::endl;
+  std::cout << "n1++ = ? --> before:" << n1++ << " after:" << n1 << std::endl;
+  std::cout << "++s1 = ? --> before:" << ++s1 << " after:" << s1 << std::endl;
+  std::cout << "s2 * big = ? --> " << s2 * big << std::endl;
+  std::cout << "big * s2 = ? --> " << big * s2 << std::endl;
+}
+
 int main() {
-  BigInt num1(90230);
-  BigInt num2(43290293);
+  testUnit();
 
-  BigInt num3 = num1 * num2;
-
-  std::cout << num3;
   return 0;
 }
