@@ -3,6 +3,10 @@
 #include <string>
 #include <vector>
 
+int toInt(char c) {
+  return c - '0'; // kinda like casting v[i] to int
+}
+
 class BigInt {
 private:
   std::vector<char> v;
@@ -20,19 +24,24 @@ public:
 
   BigInt operator+(BigInt other) {
     int carry = 0;
-    int size = this->size() > other.size() ? this->size() : other.size();
+    BigInt bigger;
+    BigInt smaller;
     BigInt result;
 
-    for (int i = 0; i < size; ++i) {
-      int num1 = 0;
+    if (this->size() > other.size()) {
+      bigger = *this;
+      smaller = other;
+    } else {
+      bigger = other;
+      smaller = *this;
+    }
+
+    for (int i = 0; i < bigger.size(); ++i) {
+      int num1 = toInt(bigger.v[i]);
       int num2 = 0;
 
-      if (i < this->size()) {
-        num1 = this->v[i] - '0';
-      }
-
-      if (i < other.size()) {
-        num2 = other.v[i] - '0';
+      if (i < smaller.size()) {
+        num2 = toInt(smaller.v[i]);
       }
 
       int newNum = carry + num1 + num2; // number between 0 - 19
@@ -59,9 +68,48 @@ public:
     return *this + other;
   }
 
-  BigInt operator-(BigInt other) { return BigInt("000000000000000000000"); }
+  BigInt operator-(BigInt other) {
+    int carry = 0;
+    BigInt bigger;
+    BigInt smaller;
+    BigInt result;
 
-  BigInt operator-(int other) { return BigInt("000000000000000000000"); }
+    if (this->size() > other.size()) {
+      bigger = *this;
+      smaller = other;
+    } else {
+      bigger = other;
+      smaller = *this;
+    }
+
+    for (int i = 0; i < bigger.size(); ++i) {
+      int num1 = toInt(bigger.v[i]);
+      int num2 = 0;
+
+      if (i < smaller.size()) {
+        num2 = toInt(smaller.v[i]);
+      }
+
+      int newNum = (num1 - carry) - num2; // number between 0 - 19
+
+      if (newNum >= 0) {
+        result.v.push_back(std::to_string(newNum)[0]);
+        carry = 0;
+      } else {
+        newNum = (num1 + 10) - num2; // should be between 0 - 9
+        result.v.push_back(std::to_string(newNum)[0]);
+        carry = 1;
+      }
+    }
+
+    return result;
+  }
+
+  BigInt operator-(int num) {
+    BigInt other(num);
+
+    return *this - other;
+  }
 
   BigInt operator*(BigInt other) {
     BigInt result;
@@ -80,7 +128,7 @@ public:
     int carry = 1;
 
     for (int i = 0; i < v.size(); ++i) {
-      int num = v[i] - '0'; // kinda like casting v[i] to int
+      int num = toInt(v[i]);
 
       if (num < 9) {
         v[i] = std::to_string(++num)[0];
@@ -177,6 +225,11 @@ void testUnit() {
 
 int main() {
   testUnit();
+
+  BigInt num1(328008);
+  BigInt num2(328008);
+
+  std::cout << num1 - num2 << '\n';
 
   return 0;
 }
