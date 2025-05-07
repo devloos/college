@@ -111,11 +111,33 @@ public:
     return *this - other;
   }
 
+  BigInt operator--() {
+    *this = *this - 1;
+
+    return *this;
+  }
+
+  BigInt operator--(int) {
+    BigInt copy = *this; // vector implements copy
+    *this = *this - 1;
+    return copy;
+  }
+
   BigInt operator*(BigInt other) {
+    BigInt bigger;
+    BigInt smaller;
     BigInt result;
 
-    for (int i = 0; i < other.size(); ++i) {
-      result = result + (*this);
+    if (this->size() > other.size()) {
+      bigger = *this;
+      smaller = other;
+    } else {
+      bigger = other;
+      smaller = *this;
+    }
+
+    for (BigInt num; num != smaller; ++num) {
+      result = result + bigger;
     }
 
     return result;
@@ -125,34 +147,19 @@ public:
   BigInt operator%(BigInt other) { return BigInt("000000000000000000000"); }
 
   BigInt operator++() {
-    int carry = 1;
-
-    for (int i = 0; i < v.size(); ++i) {
-      int num = toInt(v[i]);
-
-      if (num < 9) {
-        v[i] = std::to_string(++num)[0];
-        carry = 0;
-        break;
-      } else {
-        v[i] = '0';
-      }
-    }
-
-    if (carry == 1) {
-      v.push_back(std::to_string(carry)[0]);
-    }
+    *this = *this + 1;
 
     return *this;
   }
 
   BigInt operator++(int) {
     BigInt copy = *this; // vector implements copy
-    ++(*this);
+    *this = *this + 1;
     return copy;
   }
 
   bool operator==(BigInt other) { return this->v == other.v; }
+  bool operator!=(BigInt other) { return this->v != other.v; }
 
   BigInt operator[](int index) { return BigInt(std::to_string(v[index])); }
 
@@ -224,12 +231,12 @@ void testUnit() {
 }
 
 int main() {
+  BigInt num1(1);
+  BigInt num2(2);
+
+  std::cout << num1 * num2 << '\n';
+
   testUnit();
-
-  BigInt num1(328008);
-  BigInt num2(328008);
-
-  std::cout << num1 - num2 << '\n';
 
   return 0;
 }
