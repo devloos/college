@@ -1,3 +1,11 @@
+// Name: Carlos Aguilera
+// Class CECS 325-02
+// Project Name Prog 6 – Big Int
+// Due Date 05/08/2025
+//
+// I certify that this program is my own original work. I did not copy any part
+// of this program from any other source. I further certify that I typed each
+// and every line of code in this program.
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -8,8 +16,6 @@ int toInt(char c) {
 }
 
 class BigInt {
-private:
-  std::vector<char> v;
 
 public:
   BigInt() {}
@@ -143,8 +149,9 @@ public:
     return result;
   }
 
-  BigInt operator/(BigInt other) { return BigInt("000000000000000000000"); }
-  BigInt operator%(BigInt other) { return BigInt("000000000000000000000"); }
+  // Didn't get enough time to do it, finals killing me
+  BigInt operator/(BigInt other) { return BigInt("000000000"); }
+  BigInt operator%(BigInt other) { return BigInt("000000000"); }
 
   BigInt operator++() {
     *this = *this + 1;
@@ -171,18 +178,38 @@ public:
     }
   }
 
-  BigInt fibo() { return BigInt("000000000000000000000"); }
-  BigInt fact() { return BigInt("000000000000000000000"); }
+  // Didn't get enough time to do it, finals killing me
+  BigInt fibo() { return BigInt("000000000"); }
+  BigInt fact() { return BigInt("000000000"); }
 
   friend BigInt operator+(int num, BigInt other) { return other + num; }
 
   friend std::ostream &operator<<(std::ostream &ostream, const BigInt &num) {
-    for (int i = num.v.size() - 1; i >= 0; --i) {
+    // printing in reverse since data structure is in reverse
+
+    if (num.v.size() < 12) {
+      for (int i = num.v.size() - 1; i >= 0; --i) {
+        ostream << num.v[i];
+      }
+
+      return ostream;
+    }
+
+    int len = num.v.size() - 1;
+
+    ostream << num.v[len] << '.';
+
+    for (int i = len - 1; i > len - 7; --i) {
       ostream << num.v[i];
     }
 
+    ostream << 'e' << num.v.size() - 1;
+
     return ostream;
   }
+
+private:
+  std::vector<char> v;
 };
 
 void testUnit() {
@@ -231,11 +258,6 @@ void testUnit() {
 }
 
 int main() {
-  BigInt num1(1);
-  BigInt num2(2);
-
-  std::cout << num1 * num2 << '\n';
-
   testUnit();
 
   return 0;
