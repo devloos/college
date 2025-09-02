@@ -29,5 +29,12 @@
       <jdbc-url>jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="ethika-pg" uuid="fc0e1be7-e425-4b4b-b7e0-f7a5faaecb86">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ethika-amazon-data.csn1tudt1amv.us-west-1.rds.amazonaws.com:5432/music-studio?sslmode=require</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
