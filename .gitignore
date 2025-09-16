@@ -6,6 +6,8 @@
 # Prerequisites
 *.d
 
+*.hi
+
 # Compiled Object files
 *.slo
 *.lo

@@ -1,16 +1,14 @@
 CECS 342 Assignment 1
 Name: Carlos Aguilera
-Algorithm: quick sort, Language: C
+Algorithm: quick sort, Language: Haskell
 
-Input: {}
-Sorted: {}
-
-Input: {3}
-Sorted: {3}
-
-Input: {3, 2, 1}
-Sorted: {1, 2, 3}
-
-Input: {42, -33, 102, -74, 30, 1, 1000, -756, 33, -7, 10}
-Sorted: {-756, -74, -33, -7, 1, 10, 30, 33, 42, 102, 1000}
-
+Input:  []
+Sorted: []
+Input:  [1]
+Sorted: [1]
+Input:  [3,2,1]
+Sorted: [1,2,3]
+Input:  [102,-43,5,645,4,34,-6,776,445,45]
+Sorted: [-43,-6,4,5,34,45,102,445,645,776]
+Input:  ["the","quick","brown","fox","jumps","over","the","lazy","dog"]
+Sorted: ["brown","dog","fox","jumps","lazy","over","quick","the","the"]
