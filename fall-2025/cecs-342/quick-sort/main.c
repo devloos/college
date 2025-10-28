@@ -1,3 +1,4 @@
+#include "fast_sort.h"
 #include <stdio.h>
 
 // AI explanation here:
@@ -81,7 +82,7 @@ void run_test_case(int *arr, int size) {
   }
   printf("}\n");
 
-  quick_sort(arr, size);
+  fast_sort(arr, size);
 
   printf("Sorted: {");
   for (int i = 0; i < size; i++) {

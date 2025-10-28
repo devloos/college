@@ -82,3 +82,83 @@ x38 = (\z -> 7) 5 -- 7
 x39 = (\x -> (\y -> y + 1) x) 5 -- 6
 
 x40 = (\f -> f (f 0)) (\x -> x + 1) -- 2
+
+t01 = 0 -- Num a -> a
+
+t02 = (+) -- Num a => a -> a -> a
+
+t03 = (==) -- Eq a => a -> a -> Bool
+
+t04 = (<=) -- Ord a => a -> a -> Bool
+
+t05 = 'a' -- Char
+
+t06 = "text" -- String
+
+t07 = [1, 2, 3] -- Num a => [a]
+
+t08 = [] -- [a]
+
+t09 = (:) -- a -> [a] -> [a]
+
+t10 = [[], [0]] -- Num a => [[a]]
+
+t11 = ('a', 2) -- Num b => (Char, b)
+
+t12 = ('a', "bc") -- (Char, [Char])
+
+t13 = fst -- (a, b) -> a
+
+t14 = flip -- (f -> a -> b) -> f -> b -> a
+
+t15 = flip (:) -- (f -> a -> [a]) -> f -> [a] -> a
+
+t16 = head -- [a] -> a
+
+t17 = tail -- [a] -> [a]
+
+t18 = (++) -- [a] -> [a] -> [a]
+
+t19 = map -- (a -> b) -> [a] -> [b]
+
+t20 = foldr -- (a -> b -> b) -> b -> [a] -> b
+
+t21 = foldl -- (a -> b -> b) -> b -> [a] -> b
+
+t22 = foldr (+) 0 -- Num a => (a -> a -> a) -> a -> [a] -> a
+
+t23 = foldr (++) [] -- 
+
+t24 = sum
+
+t25 = product
+
+t26 = filter
+
+t27 = max
+
+t28 = maximum
+
+t29 = sort
+
+t30 = ($)
+
+t31 = \f x -> x
+
+t32 = \f x -> f x
+
+t33 = \f x -> f (f x)
+
+t34 = (.)
+
+t35 = curry
+
+t36 = uncurry
+
+t37 = foldl (flip (:)) []
+
+t38 = flip (foldr (:))
+
+t39 = [2 * x | x <- [1 .. 10]]
+
+t40 = map (2 *) [1 .. 10]
