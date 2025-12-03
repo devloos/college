@@ -35,7 +35,7 @@ int main() {
   std::sort(numbers.begin(), numbers.end());
   std::cout << "Numbers sorted in ascending order:\n";
 
-  for (const auto &n : numbers) {
+  for (double n : numbers) {
     std::cout << n << std::endl;
   }
 
@@ -47,7 +47,7 @@ int main() {
 
   std::cout << "People sorted alphabetically by name:\n";
 
-  for (const auto &p : people) {
+  for (const Person &p : people) {
     std::cout << p << std::endl;
   }
 
@@ -64,7 +64,7 @@ int main() {
 
   std::cout << "People sorted by age (descending), then by name:\n";
 
-  for (const auto &p : people) {
+  for (const Person &p : people) {
     std::cout << p << std::endl;
   }
 
