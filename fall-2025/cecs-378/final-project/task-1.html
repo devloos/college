@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task 1</title>
+    <script>
+      function handleInputChange() {
+        const userInput = document.getElementById("user-input").value;
+        const result = document.getElementById("result");
+        result.innerHTML = userInput;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>Enter your input:</p>
+      <input id="user-input" type="text" oninput="handleInputChange()" />
+
+      <p>Reflect Input:</p>
+      <div id="result"></div>
+    </div>
+  </body>
+</html>

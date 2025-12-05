@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task 1</title>
+    <script>
+      function escapeHtml(str) {
+        return str
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function makeRequest() {
+        const response = document.getElementById("response");
+        response.innerHTML = "Waiting for response...";
+
+        setTimeout(() => {
+          response.innerHTML = escapeHtml('<img src="x" onerror="alert(1)">');
+        }, 3000);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="make-request" onclick="makeRequest()">Make Request</button>
+
+      <p>Response:</p>
+      <div id="response">No response yet...</div>
+    </div>
+  </body>
+</html>
