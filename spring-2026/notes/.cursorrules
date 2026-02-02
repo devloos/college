@@ -55,6 +55,8 @@ When generating cleaned-up notes from raw notes:
 
 ## Workflow
 
+**IMPORTANT: When given prompt "clean 381" take the newest raw note file and clean it up using the template.md file.**
+
 1. Create new raw note file using `new-note.sh` script (e.g., `new note 381`)
 2. User takes messy notes in `raw-[date].md` files during lectures
 3. Generate `[date].md` files using the template structure from `template.md`
