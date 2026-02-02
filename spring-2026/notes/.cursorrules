@@ -1,0 +1,63 @@
+# Class Notes Processing Rules
+
+## Template Structure
+
+**IMPORTANT: The template structure is defined in `template.md`. Always refer to and follow that file exactly.**
+
+When creating or cleaning up class notes, follow the exact section order from `template.md`:
+
+1. Key Concepts
+2. TODOs
+3. Summary
+4. Review Questions
+5. Questions & Things to Look Up
+6. Connections & Big Picture
+7. Important Definitions
+
+## File Organization
+
+- Course code goes in folder name (e.g., `cecs381/`)
+- Date goes in filename (e.g., `01-21-2025.md`)
+- Do NOT include course code or date in file content headers
+- Raw notes files: `raw-[date].md`
+- Cleaned notes files: `[date].md`
+
+## Note Processing Guidelines
+
+When generating cleaned-up notes from raw notes:
+
+### Only populate sections if explicitly mentioned:
+
+- **Questions & Things to Look Up**: Only include if user explicitly noted questions or things to look up in raw notes
+- **Important Definitions**: Only include if user explicitly noted definitions in raw notes
+- **Review Questions**: Only include if user explicitly mentioned questions/problems in raw notes
+
+### Do NOT generate:
+
+- Questions or things to look up unless explicitly noted
+- Definitions unless explicitly noted
+- Do not make assumptions about what the user should look up or define
+
+### Always include (but populate based on content):
+
+- Key Concepts: Extract main ideas from raw notes
+- TODOs: Extract any tasks or reminders from raw notes
+- Summary: Create a clean summary of the lecture
+- Connections & Big Picture: Add context and connections when possible
+
+## Creating New Notes
+
+- Use the `new-note.sh` script to create new raw note files
+- Usage: `./new-note.sh [course_code]` or `new note [course_code]`
+- Example: `./new-note.sh 381` creates `cecs381/raw-MM-DD-YYYY.md` with today's date
+- The script automatically creates the course directory if it doesn't exist
+- If the file already exists, it will open the existing file instead
+
+## Workflow
+
+1. Create new raw note file using `new-note.sh` script (e.g., `new note 381`)
+2. User takes messy notes in `raw-[date].md` files during lectures
+3. Generate `[date].md` files using the template structure from `template.md`
+4. Clean up and organize content from raw notes
+5. Only populate sections that user explicitly mentioned in raw notes
+6. Delete raw file after creating the clean file out of it
