@@ -1,0 +1,347 @@
+~/development/college/spring-2026/cecs-327/project-1 main
+❯ docker --version
+Docker version 29.2.1, build a5c7197
+~/development/college/spring-2026/cecs-327/project-1 main
+❯ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+198f93fd5094: Pull complete
+Digest: sha256:ef54e839ef541993b4e87f25e752f7cf4238fa55f017957c2eb44077083d7a6a
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+~/development/college/spring-2026/cecs-327/project-1 main                                                                                                                                   5s
+❯ alpine:latest
+zsh: command not found: alpine:latest
+~/development/college/spring-2026/cecs-327/project-1 main
+❯
+docker run -it alpine:latest sh
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+d8ad8cd72600: Already exists
+Digest: sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659
+Status: Downloaded newer image for alpine:latest
+/ # ls /
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # echo "Hello Docker!" > test.txt
+/ # cat test.txt
+Hello Docker!
+/ # exit
+~/development/college/spring-2026/cecs-327/project-1 main                                                                                                                                  34s
+❯ vi app.py
+~/development/college/spring-2026/cecs-327/project-1 main*                                                                                                                                  9s
+❯ docker build -t my-python-app .
+[+] Building 4.1s (8/8) FINISHED                                                                                                                                          docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                                      0.0s
+ => => transferring dockerfile: 111B                                                                                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/python:3.12-slim                                                                                                                       0.3s
+ => [internal] load .dockerignore                                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                                           0.0s
+ => [1/3] FROM docker.io/library/python:3.12-slim@sha256:39e4e1ccb01578e3c86f7a0cf7b7fd89b8dbe2c27a88de11cf726ba669469f49                                                                 3.3s
+ => => resolve docker.io/library/python:3.12-slim@sha256:39e4e1ccb01578e3c86f7a0cf7b7fd89b8dbe2c27a88de11cf726ba669469f49                                                                 0.0s
+ => => sha256:39e4e1ccb01578e3c86f7a0cf7b7fd89b8dbe2c27a88de11cf726ba669469f49 10.37kB / 10.37kB                                                                                          0.0s
+ => => sha256:cd795213030eae659331ce321244fe32491bfab0f6d60bf30aab48f649809ea0 1.75kB / 1.75kB                                                                                            0.0s
+ => => sha256:2e632a587c426fd1044cd2f5caac653d6586a9ead8022d37da43e53dc767b3f8 5.66kB / 5.66kB                                                                                            0.0s
+ => => sha256:3b66ab8c894cad95899b704e688938517870850391d1349c862c2b09214acb86 30.14MB / 30.14MB                                                                                          1.6s
+ => => sha256:f380ef529f9ae788c83d99aedbb32ac69f388ec86c4570458fc7131601b56bbd 1.27MB / 1.27MB                                                                                            0.8s
+ => => sha256:2cea5370f2310a08c0aad6a5e050e4f5ff23a76f1e55fc853cc75801233c80b0 12.04MB / 12.04MB                                                                                          2.7s
+ => => sha256:15078c53fb67c670e1eb34ce149a964b586acaf6130579924ce7251f3ceab0f2 249B / 249B                                                                                                1.2s
+ => => extracting sha256:3b66ab8c894cad95899b704e688938517870850391d1349c862c2b09214acb86                                                                                                 0.9s
+ => => extracting sha256:f380ef529f9ae788c83d99aedbb32ac69f388ec86c4570458fc7131601b56bbd                                                                                                 0.1s
+ => => extracting sha256:2cea5370f2310a08c0aad6a5e050e4f5ff23a76f1e55fc853cc75801233c80b0                                                                                                 0.5s
+ => => extracting sha256:15078c53fb67c670e1eb34ce149a964b586acaf6130579924ce7251f3ceab0f2                                                                                                 0.0s
+ => [internal] load build context                                                                                                                                                         0.0s
+ => => transferring context: 93B                                                                                                                                                          0.0s
+ => [2/3] WORKDIR /app                                                                                                                                                                    0.4s
+ => [3/3] COPY app.py .                                                                                                                                                                   0.0s
+ => exporting to image                                                                                                                                                                    0.0s
+ => => exporting layers                                                                                                                                                                   0.0s
+ => => writing image sha256:b3ffc4c30f519e629398797f1c0c57bbc1c9d3ed6f404cc9f14395d1545aeeb7                                                                                              0.0s
+ => => naming to docker.io/library/my-python-app                                                                                                                                          0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/pqz05tg1jabnlv83nb9midh9w
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+~/development/college/spring-2026/cecs-327/project-1 main*                                                                                                                                  5s
+❯
+docker run my-python-app
+
+Hello, Docker! This is my first containerized app.
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker pull nginx:latest
+latest: Pulling from library/nginx
+3b66ab8c894c: Already exists
+4a89256e588a: Pull complete
+c813174c999b: Pull complete
+901e94f777d1: Pull complete
+e88d7844c33d: Pull complete
+2668e3434976: Pull complete
+f2c05cdfb149: Pull complete
+Digest: sha256:0236ee02dcbce00b9bd83e0f5fbc51069e7e1161bd59d99885b3ae1734f3392e
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview nginx:latest
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker run -d -p 8080:80 --name my-nginx nginx:latest
+36f17fff50b56801e4dea70b3862b6701c4d7d5f1abb9f5f0533182b3add4067
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker run -d -p 8080:80 -v $(pwd)/index.html:/usr/share/nginx/html/index.html nginx:latest
+0374e8c00e50b37a98398a40eef50b2c851d59828439a3e3852034c5f7114959
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/host_mnt/Users/ca/development/college/spring-2026/cecs-327/project-1/index.html" to rootfs at "/usr/share/nginx/html/index.html": mount src=/host_mnt/Users/ca/development/college/spring-2026/cecs-327/project-1/index.html, dst=/usr/share/nginx/html/index.html, dstFd=/proc/thread-self/fd/11, flags=MS_BIND|MS_REC: not a directory: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+
+Run 'docker run --help' for more information
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker run -d -p 8080:80 -v $(pwd)/index.html:/usr/share/nginx/html/index.html nginx:latest
+56c822f5d3df416e6a500b8e5c17e812cc742a07d9e054485c92c0232219cab6
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint pensive_franklin (28e727847d7e6f5cbbe174ca77b2c50cd1ecd96844ef80aeb9fc828220f80bb1): Bind for 0.0.0.0:8080 failed: port is already allocated
+
+Run 'docker run --help' for more information
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker run -d -p 8080:80 -v $(pwd)/index.html:/usr/share/nginx/html/index.html nginx:latest
+2775427b437dd9f1ee26985033d53a11786b4b6e0f82b976817db41489568274
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint modest_sinoussi (13bfb8685891ce01caa8ebaf9c50c30c68d5376c4025d5f25a9f7f000db5b677): Bind for 0.0.0.0:8080 failed: port is already allocated
+
+Run 'docker run --help' for more information
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker run -d -p 8080:80 -v $(pwd)/index.html:/usr/share/nginx/html/index.html nginx:latest
+312eb8d09ab5607b1a731c26c334573dd13433d57ebea1947363df71a78ee757
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker-compose
+Usage:  docker compose [OPTIONS] COMMAND
+
+Define and run multi-container applications with Docker
+
+Options:
+      --all-resources              Include all resources, even those not used by services
+      --ansi string                Control when to print ANSI control characters ("never"|"always"|"auto") (default "auto")
+      --compatibility              Run compose in backward compatibility mode
+      --dry-run                    Execute command in dry run mode
+      --env-file stringArray       Specify an alternate environment file
+  -f, --file stringArray           Compose configuration files
+      --parallel int               Control max parallelism, -1 for unlimited (default -1)
+      --profile stringArray        Specify a profile to enable
+      --progress string            Set type of progress output (auto, tty, plain, json, quiet)
+      --project-directory string   Specify an alternate working directory
+                                   (default: the path of the, first specified, Compose file)
+  -p, --project-name string        Project name
+
+Management Commands:
+  bridge      Convert compose files into another model
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a service's running container
+  build       Build or rebuild services
+  commit      Create a new image from a service container's changes
+  config      Parse, resolve and render compose file in canonical format
+  cp          Copy files/folders between a service container and the local filesystem
+  create      Creates containers for a service
+  down        Stop and remove containers, networks
+  events      Receive real time events from containers
+  exec        Execute a command in a running container
+  export      Export a service container's filesystem as a tar archive
+  images      List images used by the created containers
+  kill        Force stop service containers
+  logs        View output from containers
+  ls          List running compose projects
+  pause       Pause services
+  port        Print the public port for a port binding
+  ps          List containers
+  publish     Publish compose application
+  pull        Pull service images
+  push        Push service images
+  restart     Restart service containers
+  rm          Removes stopped service containers
+  run         Run a one-off command on a service
+  scale       Scale services
+  start       Start services
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop services
+  top         Display the running processes
+  unpause     Unpause services
+  up          Create and start containers
+  version     Show the Docker Compose version information
+  volumes     List volumes
+  wait        Block until containers of all (or specified) services stop.
+  watch       Watch build context for service and rebuild/refresh containers when files are updated
+
+Run 'docker compose COMMAND --help' for more information on a command.
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker-compose build
+validating /Users/ca/development/college/spring-2026/cecs-327/project-1/docker-compose.yml:  additional properties 'containers' not allowed
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker compose up --build
+validating /Users/ca/development/college/spring-2026/cecs-327/project-1/docker-compose.yml:  additional properties 'containers' not allowed
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker compose up --build
+WARN[0000] /Users/ca/development/college/spring-2026/cecs-327/project-1/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 1.2s (11/11) FINISHED
+ => [internal] load local bake definitions                                                                                                                                                0.0s
+ => => reading from stdin 583B                                                                                                                                                            0.0s
+ => [internal] load build definition from Dockerfile.server                                                                                                                               0.0s
+ => => transferring dockerfile: 136B                                                                                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/python:3.12-slim                                                                                                                       0.9s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                                           0.0s
+ => [1/3] FROM docker.io/library/python:3.12-slim@sha256:39e4e1ccb01578e3c86f7a0cf7b7fd89b8dbe2c27a88de11cf726ba669469f49                                                                 0.0s
+ => [internal] load build context                                                                                                                                                         0.0s
+ => => transferring context: 582B                                                                                                                                                         0.0s
+ => CACHED [2/3] WORKDIR /app                                                                                                                                                             0.0s
+ => [3/3] COPY server.py .                                                                                                                                                                0.0s
+ => exporting to image                                                                                                                                                                    0.0s
+ => => exporting layers                                                                                                                                                                   0.0s
+ => => writing image sha256:acbc20ef2b4b5285ae3203e995114ebac54629f87f55d408f2a13be9d8482cd1                                                                                              0.0s
+ => => naming to docker.io/library/project-1-server                                                                                                                                       0.0s
+ => resolving provenance for metadata file                                                                                                                                                0.0s
+[+] up 3/3
+ ✔ Image project-1-server       Built                                                                                                                                                      1.3s
+ ✔ Network project-1_default    Created                                                                                                                                                    0.0s
+ ✔ Container project-1-server-1 Created                                                                                                                                                    0.0s
+Attaching to server-1
+Error response from daemon: ports are not available: exposing port TCP 0.0.0.0:5000 -> 127.0.0.1:0: listen tcp 0.0.0.0:5000: bind: address already in use
+WARN[0000] /Users/ca/development/college/spring-2026/cecs-327/project-1/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 1.2s (16/16) FINISHED
+ => [internal] load local bake definitions                                                                                                                                                0.0s
+ => => reading from stdin 1.08kB                                                                                                                                                          0.0s
+ => [client internal] load build definition from Dockerfile.client                                                                                                                        0.0s
+ => => transferring dockerfile: 96B                                                                                                                                                       0.0s
+ => [server internal] load build definition from Dockerfile.server                                                                                                                        0.0s
+ => => transferring dockerfile: 96B                                                                                                                                                       0.0s
+ => [server internal] load metadata for docker.io/library/python:3.12-slim                                                                                                                0.9s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                             0.0s
+ => [client internal] load .dockerignore                                                                                                                                                  0.0s
+ => => transferring context: 2B                                                                                                                                                           0.0s
+ => [server 1/3] FROM docker.io/library/python:3.12-slim@sha256:39e4e1ccb01578e3c86f7a0cf7b7fd89b8dbe2c27a88de11cf726ba669469f49                                                          0.0s
+ => [client internal] load build context                                                                                                                                                  0.0s
+ => => transferring context: 31B                                                                                                                                                          0.0s
+ => [server internal] load build context                                                                                                                                                  0.0s
+ => => transferring context: 31B                                                                                                                                                          0.0s
+ => CACHED [server 2/3] WORKDIR /app                                                                                                                                                      0.0s
+ => CACHED [client 3/3] COPY client.py .                                                                                                                                                  0.0s
+ => CACHED [server 3/3] COPY server.py .                                                                                                                                                  0.0s
+ => [client] exporting to image                                                                                                                                                           0.0s
+ => => exporting layers                                                                                                                                                                   0.0s
+ => => writing image sha256:8ac46bfc7e6fb1e8a4d972074c7239e6588e38db7e225831a893c95df4e68dbb                                                                                              0.0s
+ => => naming to docker.io/library/project-1-client                                                                                                                                       0.0s
+ => [server] exporting to image                                                                                                                                                           0.0s
+ => => exporting layers                                                                                                                                                                   0.0s
+ => => writing image sha256:670e2571f5060a0f8b0c07e3a4f2e6c42822685f6679babc036a8a55b7e1ce64                                                                                              0.0s
+ => => naming to docker.io/library/project-1-server                                                                                                                                       0.0s
+ => [client] resolving provenance for metadata file                                                                                                                                       0.0s
+ => [server] resolving provenance for metadata file                                                                                                                                       0.0s
+[+] up 2/2
+ ✔ Image project-1-server Built                                                                                                                                                            1.3s
+ ✔ Image project-1-client Built                                                                                                                                                            1.3s
+Attaching to client-1, client-2, client-3, server-1
+Gracefully Stopping... press Ctrl+C again to force
+Container project-1-client-2 Stopping
+Container project-1-client-3 Stopping
+Container project-1-client-1 Stopping
+Container project-1-client-1 Stopped
+client-1 exited with code 137
+Container project-1-client-3 Stopped
+client-3 exited with code 137
+Container project-1-client-2 Stopped
+Container project-1-server-1 Stopping
+client-2 exited with code 137
+Container project-1-server-1 Stopped
+server-1 exited with code 137
+~/development/college/spring-2026/cecs-327/project-1 main*
+❯ docker compose up --build --scale client=3
+WARN[0000] /Users/ca/development/college/spring-2026/cecs-327/project-1/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 1.2s (16/16) FINISHED
+ => [internal] load local bake definitions                                                                                                                                                0.0s
+ => => reading from stdin 1.08kB                                                                                                                                                          0.0s
+ => [client internal] load build definition from Dockerfile.client                                                                                                                        0.0s
+ => => transferring dockerfile: 96B                                                                                                                                                       0.0s
+ => [server internal] load build definition from Dockerfile.server                                                                                                                        0.0s
+ => => transferring dockerfile: 96B                                                                                                                                                       0.0s
+ => [server internal] load metadata for docker.io/library/python:3.12-slim                                                                                                                0.8s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                             0.0s
+ => [client internal] load .dockerignore                                                                                                                                                  0.0s
+ => => transferring context: 2B                                                                                                                                                           0.0s
+ => [client 1/3] FROM docker.io/library/python:3.12-slim@sha256:39e4e1ccb01578e3c86f7a0cf7b7fd89b8dbe2c27a88de11cf726ba669469f49                                                          0.0s
+ => [server internal] load build context                                                                                                                                                  0.0s
+ => => transferring context: 31B                                                                                                                                                          0.0s
+ => [client internal] load build context                                                                                                                                                  0.0s
+ => => transferring context: 31B                                                                                                                                                          0.0s
+ => CACHED [client 2/3] WORKDIR /app                                                                                                                                                      0.0s
+ => CACHED [server 3/3] COPY server.py .                                                                                                                                                  0.0s
+ => CACHED [client 3/3] COPY client.py .                                                                                                                                                  0.0s
+ => [server] exporting to image                                                                                                                                                           0.0s
+ => => exporting layers                                                                                                                                                                   0.0s
+ => => writing image sha256:0f20953645347e805e5e04f2e6008f5bfa14b62083e5615f4197281a8397a32e                                                                                              0.0s
+ => => naming to docker.io/library/project-1-server                                                                                                                                       0.0s
+ => [client] exporting to image                                                                                                                                                           0.0s
+ => => exporting layers                                                                                                                                                                   0.0s
+ => => writing image sha256:4a05b4bd546819b390718d92622a2ac2a04d77aead36a1e37a86350433e172b8                                                                                              0.0s
+ => => naming to docker.io/library/project-1-client                                                                                                                                       0.0s
+ => [server] resolving provenance for metadata file                                                                                                                                       0.0s
+ => [client] resolving provenance for metadata file                                                                                                                                       0.0s
+[+] up 6/6
+ ✔ Image project-1-client       Built                                                                                                                                                      1.3s
+ ✔ Image project-1-server       Built                                                                                                                                                      1.3s
+ ✔ Container project-1-server-1 Recreated                                                                                                                                                  0.1s
+ ✔ Container project-1-client-2 Recreated                                                                                                                                                  0.1s
+ ✔ Container project-1-client-1 Recreated                                                                                                                                                  0.1s
+ ✔ Container project-1-client-3 Recreated                                                                                                                                                  0.1s
+Attaching to client-1, client-2, client-3, server-1
+server-1  | [UDP] Listening on 0.0.0.0:3000
+server-1  | [UDP] Received from ('172.22.0.3', 39017): hello from client 1 (0)
+server-1  | [UDP] Received from ('172.22.0.4', 58301): hello from client 1 (0)
+server-1  | [UDP] Received from ('172.22.0.5', 60139): hello from client 1 (0)
+server-1  | [UDP] Received from ('172.22.0.3', 39017): hello from client 1 (1)
+server-1  | [UDP] Received from ('172.22.0.4', 58301): hello from client 1 (1)
+server-1  | [UDP] Received from ('172.22.0.5', 60139): hello from client 1 (1)
+server-1  | [UDP] Received from ('172.22.0.3', 39017): hello from client 1 (2)
+server-1  | [UDP] Received from ('172.22.0.4', 58301): hello from client 1 (2)
+server-1  | [UDP] Received from ('172.22.0.5', 60139): hello from client 1 (2)
+server-1  | [UDP] Received from ('172.22.0.3', 39017): hello from client 1 (3)
+server-1  | [UDP] Received from ('172.22.0.4', 58301): hello from client 1 (3)
+server-1  | [UDP] Received from ('172.22.0.5', 60139): hello from client 1 (3)
+server-1  | [UDP] Received from ('172.22.0.3', 39017): hello from client 1 (4)
+server-1  | [UDP] Received from ('172.22.0.4', 58301): hello from client 1 (4)
+server-1  | [UDP] Received from ('172.22.0.5', 60139): hello from client 1 (4)
+client-1 exited with code 0
+client-2 exited with code 0
+client-3 exited with code 0
+Gracefully Stopping... press Ctrl+C again to force
+Container project-1-client-3 Stopping
+Container project-1-client-2 Stopping
+Container project-1-client-1 Stopping
+Container project-1-client-3 Stopped
+Container project-1-client-2 Stopped
+Container project-1-client-1 Stopped
+Container project-1-server-1 Stopping
+^CContainer project-1-server-1 Killing
+Container project-1-client-3 Killing
+Container project-1-client-2 Killing
+Container project-1-client-1 Killing
+Container project-1-client-3 Error Error while Killing
+Container project-1-client-1 Error Error while Killing
+Container project-1-client-2 Error Error while Killing
+Container project-1-server-1 Error Error while Killing
+Container project-1-server-1 Stopped

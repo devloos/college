@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    command: ["python", "-u", "server.py"]
+    environment:
+      - PYTHONUNBUFFERED=1 # print output immediately
+
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    command: ["python", "-u", "client.py"]
+    environment:
+      - PYTHONUNBUFFERED=1 # print output immediately
+    depends_on:
+      - server
