@@ -1,0 +1,172 @@
+Enter one character at a time. Press Enter with no input to finish.
+Current state: 0
+> 
+
+Result: reject
+
+
+
+~/development/college/spring-2026/cecs-329/dfa main*                                                13s
+❯ python3 index.py               
+Enter one character at a time. Press Enter with no input to finish.
+Current state: 0
+> c
+Current state: 0, buffer: c
+> a
+Current state: 0, buffer: ca
+> r
+Current state: 0, buffer: car
+> l
+Current state: 0, buffer: carl
+> o
+Current state: 0, buffer: carlo
+> s
+Current state: 1, buffer: carlos
+> a
+Current state: 1, buffer: carlosa
+> g
+Current state: 1, buffer: carlosag
+> u
+Current state: 1, buffer: carlosagu
+> i
+Current state: 1, buffer: carlosagui
+> l
+Current state: 1, buffer: carlosaguil
+> e
+Current state: 1, buffer: carlosaguile
+> r
+Current state: 1, buffer: carlosaguiler
+> a
+Current state: 2, buffer: carlosaguilera
+> 
+
+Result: accept
+
+
+~/development/college/spring-2026/cecs-329/dfa main*                                                24s
+❯ python3 index.py
+Enter one character at a time. Press Enter with no input to finish.
+Current state: 0
+> xx
+Please enter one character at a time.
+> x
+Current state: 0, buffer: x
+> x
+Current state: 0, buffer: xx
+> c
+Current state: 0, buffer: xxc
+> a
+Current state: 0, buffer: xxca
+> r
+Current state: 0, buffer: xxcar
+> l
+Current state: 0, buffer: xxcarl
+> o
+Current state: 0, buffer: xxcarlo
+> s
+Current state: 1, buffer: xxcarlos
+> y
+Current state: 1, buffer: xxcarlosy
+> y
+Current state: 1, buffer: xxcarlosyy
+> a
+Current state: 1, buffer: xxcarlosyya
+> g
+Current state: 1, buffer: xxcarlosyyag
+> u
+Current state: 1, buffer: xxcarlosyyagu
+> i
+Current state: 1, buffer: xxcarlosyyagui
+> l
+Current state: 1, buffer: xxcarlosyyaguil
+> e
+Current state: 1, buffer: xxcarlosyyaguile
+> r
+Current state: 1, buffer: xxcarlosyyaguiler
+> a
+Current state: 2, buffer: xxcarlosyyaguilera
+> q
+Current state: 2, buffer: xxcarlosyyaguileraq
+> q
+Current state: 2, buffer: xxcarlosyyaguileraqq
+> 
+
+Result: accept
+
+
+
+~/development/college/spring-2026/cecs-329/dfa main*                                                35s
+❯ python3 index.py
+Enter one character at a time. Press Enter with no input to finish.
+Current state: 0
+> c
+Current state: 0, buffer: c
+> a
+Current state: 0, buffer: ca
+> r
+Current state: 0, buffer: car
+> l
+Current state: 0, buffer: carl
+> o
+Current state: 0, buffer: carlo
+> s
+Current state: 1, buffer: carlos
+> 
+
+Result: reject
+
+
+
+~/development/college/spring-2026/cecs-329/dfa main*                                                 5s
+❯ python3 index.py
+Enter one character at a time. Press Enter with no input to finish.
+Current state: 0
+> a 
+Current state: 0, buffer: a
+> g
+Current state: 0, buffer: ag
+> u
+Current state: 0, buffer: agu
+> l
+Current state: 0, buffer: agul
+> 
+
+Result: reject
+
+
+
+~/development/college/spring-2026/cecs-329/dfa main*                                                 8s
+❯ python3 index.py
+Enter one character at a time. Press Enter with no input to finish.
+Current state: 0
+> a
+Current state: 0, buffer: a
+> g
+Current state: 0, buffer: ag
+> u
+Current state: 0, buffer: agu
+> i
+Current state: 0, buffer: agui
+> l
+Current state: 0, buffer: aguil
+> e
+Current state: 0, buffer: aguile
+> r
+Current state: 0, buffer: aguiler
+> a
+Current state: 0, buffer: aguilera
+> c
+Current state: 0, buffer: aguilerac
+> a
+Current state: 0, buffer: aguileraca
+> r
+Current state: 0, buffer: aguileracar
+> l
+Current state: 0, buffer: aguileracarl
+> o
+Current state: 0, buffer: aguileracarlo
+> s
+Current state: 1, buffer: aguileracarlos
+> 
+
+Result: reject
