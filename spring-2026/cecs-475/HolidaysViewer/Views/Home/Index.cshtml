@@ -5,7 +5,7 @@
 <div>
     <h3 class="display-4">Public Holidays Finder</h3>
     <center>
-        <form asp-controller="Home" asp-action="Index">
+        <form id="date-nager-form">
             <table>
                 <tr>
                     <td>Country Code: </td>
@@ -18,20 +18,20 @@
             <hr />
         </form>
     </center>
-    @if (Model != null && Model.Count > 0)
-    {
-        <table class="table table-bordered table-striped table-sm">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Local Name</th>
-                    <th>Country Code</th>
-                    <th>Global</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
+    @* @if (Model != null && Model.Count > 0)
+    { *@
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Local Name</th>
+                <th>Country Code</th>
+                <th>Global</th>
+            </tr>
+        </thead>
+        <tbody id="holidays-table">
+            @* @foreach (var item in Model)
                 {
                     <tr>
                         <td>@item.Date?.ToShortDateString()</td>
@@ -39,10 +39,10 @@
                         <td>@Html.DisplayFor(modelItem => item.LocalName)</td>
                         <td>@Html.DisplayFor(modelItem =>
                                                 item.CountryCode)</td>
-                <td>@Html.DisplayFor(modelItem => item.Global)</td>
+                <td>@Html.DisplayFor(modelItem => item.Global)</td> *@
             </tr>
-                        }
-            </tbody>
-        </table>
-    }
+            @* } *@
+        </tbody>
+    </table>
+    @* } *@
 </div>
