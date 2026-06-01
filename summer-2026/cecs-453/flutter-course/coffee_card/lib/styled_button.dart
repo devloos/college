@@ -13,6 +13,7 @@ class StyledButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.brown[700],
         foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
       child: child,
     );
