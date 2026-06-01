@@ -26,7 +26,14 @@ class CoffeePrefs extends StatelessWidget {
               colorBlendMode: BlendMode.multiply,
             ),
             Expanded(child: SizedBox()),
-            ElevatedButton(onPressed: incrementStrength, child: Text('+')),
+            ElevatedButton(
+              onPressed: incrementStrength,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.brown[700],
+                foregroundColor: Colors.white,
+              ),
+              child: Text('+'),
+            ),
           ],
         ),
         Row(
@@ -40,7 +47,14 @@ class CoffeePrefs extends StatelessWidget {
               colorBlendMode: BlendMode.multiply,
             ),
             Expanded(child: SizedBox()),
-            ElevatedButton(onPressed: incrementSugars, child: Text('+')),
+            ElevatedButton(
+              onPressed: incrementSugars,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.brown[700],
+                foregroundColor: Colors.white,
+              ),
+              child: Text('+'),
+            ),
           ],
         ),
       ],
