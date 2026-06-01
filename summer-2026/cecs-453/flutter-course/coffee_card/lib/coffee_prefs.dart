@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:coffee_card/styled_body_text.dart';
 
 class CoffeePrefs extends StatefulWidget {
   const CoffeePrefs({super.key});
@@ -9,7 +10,7 @@ class CoffeePrefs extends StatefulWidget {
 
 class _CoffeePrefsState extends State<CoffeePrefs> {
   int strength = 1;
-  int sugars = 1;
+  int sugars = 0;
 
   void incrementStrength() {
     setState(() {
@@ -48,7 +49,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
     List<Widget> sugarImages = [];
 
     if (sugars == 0) {
-      sugarImages.add(Text('No sugar'));
+      sugarImages.add(StyledBodyText('No sugar...'));
     }
 
     for (int i = 0; i < sugars; i++) {
@@ -59,7 +60,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
       children: [
         Row(
           children: [
-            Text('Strength: '),
+            StyledBodyText('Strength: '),
             ...strengthImages,
             Expanded(child: SizedBox()),
             ElevatedButton(
@@ -74,7 +75,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
         ),
         Row(
           children: [
-            Text('Sugars: '),
+            StyledBodyText('Sugars: '),
             ...sugarImages,
             Expanded(child: SizedBox()),
             ElevatedButton(
