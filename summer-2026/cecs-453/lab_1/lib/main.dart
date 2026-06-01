@@ -37,13 +37,8 @@ class MyHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 120.0,
-                  height: 100.0,
                   padding: EdgeInsets.all(10.0),
-                  child: Placeholder(
-                    fallbackWidth: 120.0,
-                    fallbackHeight: 100.0,
-                  ),
+                  child: Image.asset('assets/images/stud.png', width: 130.0),
                 ),
                 Text(
                   'Carlos Aguilera',
