@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter Demo Home Page')),
+      appBar: AppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,18 +39,24 @@ class MyHomePage extends StatelessWidget {
                 Container(
                   width: 120.0,
                   height: 100.0,
+                  padding: EdgeInsets.all(10.0),
                   child: Placeholder(
                     fallbackWidth: 120.0,
                     fallbackHeight: 100.0,
                   ),
                 ),
                 Text(
-                  'Full Name',
-                  style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+                  'Carlos Aguilera',
+                  style: TextStyle(
+                    fontSize: 38.0,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 2.0,
+                  ),
                 ),
+                SizedBox(height: 10.0),
                 Text(
-                  'Title',
-                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                  'Software Engineer',
+                  style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -61,25 +67,28 @@ class MyHomePage extends StatelessWidget {
               children: [
                 Row(
                   children: [
+                    SizedBox(width: 100.0),
                     Placeholder(fallbackWidth: 40.0, fallbackHeight: 40.0),
-                    SizedBox(width: 10.0),
-                    Text('+61 412 345 678'),
+                    SizedBox(width: 20.0),
+                    Text('+1 (555) 123-4567'),
                   ],
                 ),
                 SizedBox(height: 10.0),
                 Row(
                   children: [
+                    SizedBox(width: 100.0),
                     Placeholder(fallbackWidth: 40.0, fallbackHeight: 40.0),
-                    SizedBox(width: 10.0),
-                    Text('@social_media'),
+                    SizedBox(width: 20.0),
+                    Text('@carlos_aguilera'),
                   ],
                 ),
                 SizedBox(height: 10.0),
                 Row(
                   children: [
+                    SizedBox(width: 100.0),
                     Placeholder(fallbackWidth: 40.0, fallbackHeight: 40.0),
-                    SizedBox(width: 10.0),
-                    Text('email@example.com'),
+                    SizedBox(width: 20.0),
+                    Text('carlos.aguilera@example.com'),
                   ],
                 ),
               ],
