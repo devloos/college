@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,7 +64,11 @@ class MyHomePage extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(width: 100.0),
-                    Placeholder(fallbackWidth: 40.0, fallbackHeight: 40.0),
+                    SvgPicture.asset(
+                      'assets/icons/phone.svg',
+                      width: 40.0,
+                      height: 40.0,
+                    ),
                     SizedBox(width: 20.0),
                     Text('+1 (555) 123-4567'),
                   ],
@@ -72,7 +77,11 @@ class MyHomePage extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(width: 100.0),
-                    Placeholder(fallbackWidth: 40.0, fallbackHeight: 40.0),
+                    SvgPicture.asset(
+                      'assets/icons/contact.svg',
+                      width: 40.0,
+                      height: 40.0,
+                    ),
                     SizedBox(width: 20.0),
                     Text('@carlos_aguilera'),
                   ],
@@ -81,7 +90,11 @@ class MyHomePage extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(width: 100.0),
-                    Placeholder(fallbackWidth: 40.0, fallbackHeight: 40.0),
+                    SvgPicture.asset(
+                      'assets/icons/email.svg',
+                      width: 40.0,
+                      height: 40.0,
+                    ),
                     SizedBox(width: 20.0),
                     Text('carlos.aguilera@example.com'),
                   ],
