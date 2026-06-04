@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+// CECS 453
+// Lab assignment 2
+// Just Me: Carlos Aguilera
+// Video link: https://www.loom.com/share/4bf6f488e66f4a4b84a238ff99bdade7
+
 void main() {
   runApp(const MyApp());
 }
