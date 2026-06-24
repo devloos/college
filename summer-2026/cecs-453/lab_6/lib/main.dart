@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'services/weather_service.dart';
 
+// CECS 453
+// Lab assignment 6
+// Just Me: Carlos Aguilera
+// Video link: https://www.loom.com/share/4d838667110b4f1a904b11a2247f3842
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
