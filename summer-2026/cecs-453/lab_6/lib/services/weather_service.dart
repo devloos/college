@@ -2,17 +2,26 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+Map<String, String> weatherImageMap = {
+  'Clear': 'assets/images/clear_sky.jpg',
+  'Clouds': 'assets/images/broken_clouds.jpg',
+  'Rain': 'assets/images/rain.jpg',
+  'Thunderstorm': 'assets/images/rain.jpg',
+  'Drizzle': 'assets/images/rain.jpg',
+  'Snow': 'assets/images/broken_clouds.jpg',
+};
+
 class Weather {
   final String city;
   final double temperature;
   final String description;
-  final String main;
+  final String imagePath;
 
   Weather({
     required this.city,
     required this.temperature,
     required this.description,
-    required this.main,
+    required this.imagePath,
   });
 }
 
@@ -33,7 +42,9 @@ class WeatherService {
         city: data['name'],
         temperature: data['main']['temp'],
         description: data['weather'][0]['description'],
-        main: data['weather'][0]['main'],
+        imagePath:
+            weatherImageMap[data['weather'][0]['main']] ??
+            'assets/images/clear_sky.jpg',
       );
     } else {
       throw Exception('Failed to load weather data');
