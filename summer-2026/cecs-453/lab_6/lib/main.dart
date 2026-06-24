@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     text: 'London',
   );
   bool _isLoading = false;
-  Map<String, dynamic> _weather = {};
+  Weather? _weather;
 
   @override
   void initState() {
@@ -58,13 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
       });
 
       final weatherService = WeatherService();
-      final response = await weatherService.fetchWeather(_cityController.text);
+      final weather = await weatherService.fetchWeather(_cityController.text);
 
       setState(() {
-        _weather = response;
+        _weather = weather;
       });
-    } catch (e) {
-      print(e);
     } finally {
       setState(() {
         _isLoading = false;
@@ -100,16 +98,18 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 30),
             if (_isLoading)
               const CircularProgressIndicator()
-            else
+            else if (_weather != null)
               Column(
                 children: [
-                  Text('Weather in ${_cityController.text}:'),
+                  Text('Weather in ${_weather!.city}:'),
                   Text(
-                    _weather.toString(),
+                    '${_weather!.temperature}°C',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],
-              ),
+              )
+            else
+              Text('No weather data found'),
           ],
         ),
       ),
