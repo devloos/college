@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Weather App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      home: const MyHomePage(title: 'Weather App'),
     );
   }
 }
@@ -33,7 +35,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _city = 'London';
+  final TextEditingController _cityController = TextEditingController(
+    text: 'London',
+  );
   bool _isLoading = false;
   Map<String, dynamic> _weather = {};
 
@@ -44,14 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> _fetchWeather() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    final weatherService = WeatherService();
-    final response = await weatherService.fetchWeather(_city);
+    if (_cityController.text.isEmpty) {
+      return;
+    }
 
     try {
+      setState(() {
+        _isLoading = true;
+      });
+
+      final weatherService = WeatherService();
+      final response = await weatherService.fetchWeather(_cityController.text);
+
       setState(() {
         _weather = response;
       });
@@ -73,15 +81,34 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: .center,
           children: [
-            Text('Weather in $_city:'),
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _cityController,
+                decoration: InputDecoration(
+                  labelText: 'City',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: _fetchWeather,
+              child: Text('Fetch Weather'),
+            ),
+            SizedBox(height: 30),
             if (_isLoading)
               const CircularProgressIndicator()
             else
-              Text(
-                _weather.toString(),
-                style: Theme.of(context).textTheme.headlineMedium,
+              Column(
+                children: [
+                  Text('Weather in ${_cityController.text}:'),
+                  Text(
+                    _weather.toString(),
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ],
               ),
           ],
         ),
