@@ -8,6 +8,7 @@ import 'package:sqflite_note_saver/ui/note_list_screen.dart';
 // Lab assignment 7
 // Just Me: Carlos Aguilera
 // Video link: https://www.loom.com/share/03eb71cd9eb54cad979b50a4e9cacb12
+// Github: https://github.com/devloos/cecs-453-lab-7
 
 void main() {
   setupLocator(); // Set up our dependencies
