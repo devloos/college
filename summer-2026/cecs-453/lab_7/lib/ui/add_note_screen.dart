@@ -23,6 +23,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         id: widget.note?.id,
         title: _titleController.text,
         description: _descriptionController.text,
+        createdAt: DateTime.now(),
       );
       // Use the provider to save the note
       final provider = Provider.of<NoteProvider>(context, listen: false);
@@ -67,6 +68,16 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   return null;
                 },
               ),
+              if (widget.note != null)
+                Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Text(
+                      'Created at: ${widget.note!.createdAt.toLocal().toIso8601String()}',
+                      style: const TextStyle(fontSize: 12),
+                    ),
+                  ],
+                ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _saveNote,

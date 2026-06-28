@@ -15,13 +15,24 @@ class DBHelper {
 
   Future<Database> _initDb() async {
     String path = join(await getDatabasesPath(), 'notes.db');
-    return await openDatabase(path, version: 1, onCreate: _onCreate);
+    return await openDatabase(
+      path,
+      version: 3,
+      onCreate: _onCreate,
+      onUpgrade: _onUpgrade,
+    );
   }
 
   void _onCreate(Database db, int version) async {
     await db.execute(
       'CREATE TABLE notes(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT)',
     );
+  }
+
+  void _onUpgrade(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 3) {
+      await db.execute('ALTER TABLE notes ADD COLUMN createdAt TEXT');
+    }
   }
 
   Future<int> insertNote(Note note) async {
