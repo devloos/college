@@ -4,6 +4,11 @@ import 'package:sqflite_note_saver/di/service_locator.dart';
 import 'package:sqflite_note_saver/providers/note_provider.dart';
 import 'package:sqflite_note_saver/ui/note_list_screen.dart';
 
+// CECS 453
+// Lab assignment 7
+// Just Me: Carlos Aguilera
+// Video link: https://www.loom.com/share/03eb71cd9eb54cad979b50a4e9cacb12
+
 void main() {
   setupLocator(); // Set up our dependencies
   runApp(const MyApp());
