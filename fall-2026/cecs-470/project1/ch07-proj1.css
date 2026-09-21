@@ -53,7 +53,60 @@ button {
 }
 
 /* add your styles here */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 24%;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+img {
+  max-width: 100%;
+}
+.card img:hover {
+  filter: saturate(150%);
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.card button {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.card:hover button {
+  opacity: 1;
+}
 
 /* styles for mobile protrait screen */
+@media only screen and (max-width: 480px) {
+  :root {
+    --card-font-size: 100%;
+    --header-font-size: 24px;
+    --header-height: 4em;
+  }
+  .card {
+    width: 100%;
+  }
+}
 
 /* styles for tablet portrait and mobile landscape screens */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --card-font-size: 100%;
+    --header-height: 5em;
+  }
+  .card {
+    width: 45%;
+  }
+}
