@@ -1,3 +1,5 @@
+/* video demo: https://www.loom.com/share/74cbf8f309d346d4bc5cdc5a8bd3ca83 */
+
 :root {
   --color-primary: #ff6e40;
   --color-back-light: #eceff1;
@@ -53,11 +55,15 @@ button {
 }
 
 /* add your styles here */
+
+/* horizontal layout with space between and centered */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+/* horizontal layout with centered items */
 .container {
   display: flex;
   align-items: center;
@@ -74,16 +80,20 @@ header {
 img {
   max-width: 100%;
 }
+/* on hover, saturate the image */
 .card img:hover {
   filter: saturate(150%);
 }
+/* on hover, add a subtle shadow */
 .card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+/* on hover, show the button */
 .card button {
   opacity: 0;
   transition: opacity 1s;
 }
+/* on hover, show the button */
 .card:hover button {
   opacity: 1;
 }
