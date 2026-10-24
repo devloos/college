@@ -1,0 +1,38 @@
+body {
+  margin: 50px;
+}
+
+#inputs {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#inputs div {
+  margin-left: 25px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  justify-self: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid lightgray;
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+}
+
+td {
+  padding: 5px;
+}
+
+#table-body tr:nth-child(even) {
+  background-color: lightgrey;
+}
